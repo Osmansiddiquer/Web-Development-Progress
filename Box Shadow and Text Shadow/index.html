@@ -13,16 +13,36 @@
 <body>
     <header>
         <h1 class="top-heading">Box Shadow and Text Shadow</h1>
+        <p class="sub-line">
+            <em>You can play around and edit the shadows interactively in the chrome-dev tools' shadow editor.</em>
+        </p>
     </header>
     <main>
-        <h2><strong><u>Box-Shadow</u>:</strong></h2>
-        <p class="text-indent">Come to think of it, I haven't written anything about this yet, even though I have been using this for quite some time now. The box-shadow CSS property adds shadow effects around an element's frame. You can set multiple effects separated by commas. A box shadow is described by <strong>X and Y offsets relative to the element, blur and spread radius, and color</strong>. As you can see, the effect of border-radius propery is also extended to the box-shadow.</p>
-        <div class="container">
-            <div class="card" id="card-1"><h3>Card 1</h3>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni dolor iste rem non excepturi quibusdam consequuntur porro eveniet quod soluta sint odio laudantium quis, placeat dolorem perspiciatis, quam libero officiis cum architecto!</div>
-            <div class="card" id="card-2"><h3>Card 2</h3>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni dolor iste rem non excepturi quibusdam consequuntur porro eveniet quod soluta sint odio laudantium quis, placeat dolorem perspiciatis, quam libero officiis cum architecto!</div>
-            <div class="card" id="card-3"><h3>Card 3</h3>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni dolor iste rem non excepturi quibusdam consequuntur porro eveniet quod soluta sint odio laudantium quis, placeat dolorem perspiciatis, quam libero officiis cum architecto!</div>
-        </div>
-        <code class = "language-css">
+        <section>
+            <h2><u>Box-Shadow</u>:</h2>
+            <p class="text-indent">Come to think of it, I haven't written anything about this yet, even though I have
+                been using this for quite some time now. The box-shadow CSS property adds shadow effects around an
+                element's frame. You can set multiple effects separated by commas. A box shadow is described by
+                <strong>X and Y offsets relative to the element, blur and spread radius, and color</strong>. As you can
+                see, the effect of border-radius propery is also extended to the box-shadow.</p>
+            <div class="container">
+                <div class="card" id="card-1">
+                    <h3>Card 1</h3>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni dolor iste rem non
+                    excepturi quibusdam consequuntur porro eveniet quod soluta sint odio laudantium quis, placeat
+                    dolorem perspiciatis, quam libero officiis cum architecto!
+                </div>
+                <div class="card" id="card-2">
+                    <h3>Card 2</h3>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni dolor iste rem non
+                    excepturi quibusdam consequuntur porro eveniet quod soluta sint odio laudantium quis, placeat
+                    dolorem perspiciatis, quam libero officiis cum architecto!
+                </div>
+                <div class="card" id="card-3">
+                    <h3>Card 3</h3>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni dolor iste rem non
+                    excepturi quibusdam consequuntur porro eveniet quod soluta sint odio laudantium quis, placeat
+                    dolorem perspiciatis, quam libero officiis cum architecto!
+                </div>
+            </div>
+            <code class="language-css">
 #card-1 {
     box-shadow: 5px 5px rgb(65, 0, 70);
 }
@@ -34,17 +54,17 @@
 #card-3 {
     box-shadow: inset 0px 0px 50px -10px rgb(0, 0, 0);
 }
-        </code>
-        <br>
-        <strong><u>Possible Syntax (without inset)</u>:</strong>
-        <ol style="text-align: center; font-weight: bold;">
-            <li><span class="inline-code">box-shadow: X-Offset Y-Offset color;</span></li>
-            <li><span class="inline-code">box-shadow: X-Offset Y-Offset Blur-Radius color;</span></li>
-            <li><span class="inline-code">box-shadow: X Y Blur-Radius Spread-Radius color;</span></li>
-        </ol>
-        <br>
-<strong><u>Examples</u>:</strong>
-        <code class="language-css">
+            </code>
+            <br>
+            <strong><u>Possible Syntax (without inset)</u>:</strong>
+            <ol style="text-align: center; font-weight: bold;">
+                <li><span class="inline-code">box-shadow: X-Offset Y-Offset color;</span></li>
+                <li><span class="inline-code">box-shadow: X-Offset Y-Offset Blur-Radius color;</span></li>
+                <li><span class="inline-code">box-shadow: X Y Blur-Radius Spread-Radius color;</span></li>
+            </ol>
+            <br>
+            <strong><u>Examples</u>:</strong>
+            <code class="language-css">
 /* offset-x | offset-y | color */
 box-shadow: 60px -16px teal;
 
@@ -59,29 +79,94 @@ box-shadow: inset 5em 1em gold;
 
 /* Any number of shadows, separated by commas */
 box-shadow:
-    3px 3px red,
-    -1em 0 0.4em olive;
-        </code>
-        <br>
-        <strong><u>About the Inset</u>:</strong>
-        <p class="text-indent after-space">
-            If not specified (default), the shadow is assumed to be a drop shadow (as if the box were raised above the content). The presence of the inset keyword changes the shadow to one inside the frame (as if the content was debossed inside the box). Inset shadows are drawn inside the border (even transparent ones), above the background, but below content. Blur-radius and spread-radius become highly confusing to deal with, with the inset activated.
-        </p>
-        <strong><u>Blur-Radius</u>:</strong>
-        <p class="text-indent after-space">
-            This is a third <length> value. The larger this value, the bigger the blur, so the shadow becomes bigger and lighter. Negative values are not allowed. If not specified, it will be 0 (the shadow's edge is sharp). The specification does not include an exact algorithm for how the blur radius should be calculated.
+3px 3px red,
+-1em 0 0.4em olive;
+
+/* Default color is black */
+box-shadow: 4px 5px 0px 10px;
+            </code>
+            <br>
+            <strong><u>About the Inset</u>:</strong>
+            <p class="text-indent after-space">
+                If not specified (default), the shadow is assumed to be a drop shadow (as if the box were raised above
+                the content). The presence of the inset keyword changes the shadow to one inside the frame (as if the
+                content was debossed inside the box). Inset shadows are drawn inside the border (even transparent ones),
+                above the background, but below content. Blur-radius and spread-radius become highly confusing to deal
+                with, with the inset activated.
+            </p>
+            <strong><u>Blur-Radius</u>:</strong>
+            <p class="text-indent after-space">
+                This is a third <length> value. The larger this value, the bigger the blur, so the shadow becomes bigger
+                    and lighter. Negative values are not allowed. If not specified, it will be 0 (the shadow's edge is
+                    sharp). The specification does not include an exact algorithm for how the blur radius should be
+                    calculated.
             </p>
             <strong><u>Spread-Radius</u>:</strong>
             <p class="text-indent after-space">
                 Basically, how big the shadow should be. Can be negative.
             </p>
-            <em>Use the box-shadow generator to fine tune the confusing parameters.</em>
+            <em>Use the box-shadow generator or the chrome-dev tools to fine tune the confusing parameters.</em>
+        </section>
+        <section id = "text-shadow">
+            <h2><u>Text-Shadow</u>:</h2>
+            <p class="text-indent">
+                The text-shadow CSS property adds shadows to text. It accepts a comma-separated list of shadows to be applied to the text and any of its decorations. Each shadow is described by some combination of X and Y offsets from the element, blur radius, and color.
+            </p>
+            <p class="text-indent">
+                The syntax of text-shadow is quite similar to the box-shadow. The only difference being the lack of inset and spread-radius parameters.
+            </p>
+            <div class="container">
+                <div id="text-shadow-1">TEXT_SHADOW-1</div>
+                <div id="text-shadow-2">TEXT_SHADOW-2</div>
+                <div id="text-shadow-3">TEXT_SHADOW-3</div>
+            </div>
+            <p class="text-indent before-space">
+                As you can observe in the second example, the default color of the text-shadow is the same as the text. 
+            </p>
+            <code class = "language-css">
+#text-shadow-1 {
+    text-shadow: rgb(152, 243, 255) 0 0 10px;
+}
+
+#text-shadow-2 {
+    text-shadow: 5px 10px;
+}
+
+#text-shadow-3 {
+    text-shadow: 1px 1px 0px rgb(212, 255, 0),
+    0 -10px 0.1em rgba(0, 255, 55, 0.404),
+    5px 5px 0.2em blue;
+}
+
+            </code>
+            <br>
+            <strong><u>Syntax Examples</u>:</strong>
+            <code class="language-css">
+/* offset-x | offset-y | blur-radius | color */
+text-shadow: 1px 1px 2px black;
+
+/* color | offset-x | offset-y | blur-radius */
+text-shadow: #fc0 1px 0 10px;
+
+/* offset-x | offset-y | color */
+text-shadow: 5px 5px #558abb;
+
+/* color | offset-x | offset-y */
+text-shadow: white 2px 5px;
+
+/* offset-x | offset-y
+/* Use defaults for color and blur-radius */
+text-shadow: 5px 10px;
+            </code>
+        </section>
     </main>
     <footer>
         Resources:
         <ol>
-            <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow" target="_blank" rel="noopener noreferrer">Box-Shadow - MDN Docs</a></li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow" target="_blank"
+                    rel="noopener noreferrer">Box-Shadow - MDN Docs</a></li>
             <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_backgrounds_and_borders/Box-shadow_generator" target="_blank" rel="noopener noreferrer">Box Shadow Generator</a></li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-shadow" target="_blank" rel="noopener noreferrer">Text Shadow - MDN Docs</a></li>
         </ol>
     </footer>
 </body>

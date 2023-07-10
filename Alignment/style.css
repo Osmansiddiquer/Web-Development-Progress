@@ -20,6 +20,7 @@ main {
 }
 
 header>.sub-line {
+    margin-top: 0.5em;
     text-align: center;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
@@ -66,6 +67,8 @@ header>.top-heading {
     font-variant: small-caps;
     font-weight: 500;
     font-size: 6vw;
+    
+    text-shadow: 0px 0px 2px black;
 }
 
 footer a:hover {
@@ -123,3 +126,4 @@ header {
 .text-indent {
     text-indent: 30px;
 }
+

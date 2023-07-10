@@ -31,7 +31,7 @@ div.card {
 }
 
 #card-1 {
-    box-shadow: 5px 5px rgb(65, 0, 70);
+    box-shadow: 5px 5px rgb(89, 0, 95);
 }
 
 #card-2 {
@@ -39,7 +39,7 @@ div.card {
 }
 
 #card-3 {
-    box-shadow: inset 0px 0px 50px -10px rgb(0, 0, 0);
+    box-shadow: inset 0px 0px 50px -10px;
 }
 
 body {
@@ -56,3 +56,27 @@ body {
     }
 }
 
+#text-shadow>.container {
+    height: 400px;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    font-size: 4vw;
+    font-family: cursive;
+    font-weight: bolder;
+    color: rgb(132, 0, 255);
+}
+
+#text-shadow-1 {
+    text-shadow: rgb(152, 243, 255) 0 0 10px;
+}
+
+#text-shadow-2 {
+    text-shadow: 5px 10px;
+}
+
+#text-shadow-3 {
+    text-shadow: 1px 1px 0px rgb(212, 255, 0),
+    0 -10px 0.1em rgba(0, 255, 55, 0.404),
+    5px 5px 0.2em blue;
+}
