@@ -1,0 +1,140 @@
+body {
+    background-image: linear-gradient(60deg, red, pink, rgb(255, 200, 240));
+}
+
+#first-paragraph {
+    background-color: #ff0000;
+    height: 100px;
+    width: 450px;
+    /* Can be combined */
+    border-color: #000;
+    border-width: 10px;
+    border-style: double;
+    border-radius: 20px;
+    /* border: 10px solid double */
+    margin: auto;
+    border-top-style: solid;
+    border-top-right-radius: 100px;
+    border-bottom-left-radius: 100px;
+    margin-bottom: 20px;
+    padding: 20px;
+    /* So the text doesn't overflow */
+}
+
+.card {
+    display: table;
+    top: 50px;
+    position: relative;
+    height: 450px;
+    width: 50%;
+    max-width: 300px;
+    background-color: rgb(57, 52, 52);
+    color: white;
+    margin: auto;
+    border-radius: 20px;
+    transition: 1s;
+}
+
+.card::after {
+    /*adds an rgb background behind the card*/
+    --neg-border-width: -5px;
+    position: absolute;
+    top: var(--neg-border-width);
+    bottom: var(--neg-border-width);
+    left: var(--neg-border-width);
+    right: var(--neg-border-width);
+    background: linear-gradient(60deg, red, orange, blue, indigo, violet);
+    content: '';
+    /*this is important*/
+    z-index: -1;
+    border-radius: 25px;
+    box-shadow: 0px 0px 100px 2px red;
+    animation: rgb 4s infinite;
+    transition: 1s;
+    background-size: 200% 200%;
+    background-position: 0% 50%;
+}
+
+.wrapper {
+    transition: 1s;
+}
+
+.wrapper:hover {
+    scale: 1.1;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.card:hover::after {
+    animation: rgb 4s infinite, rotate-bg 2s infinite;
+    rotate: 15deg;
+}
+
+@keyframes rotate-bg {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes rgb {
+    0% {
+        box-shadow: 0px 0px 100px 2px red;
+    }
+
+    20% {
+        box-shadow: 0px 0px 100px 2px orange;
+    }
+
+    40% {
+        box-shadow: 0px 0px 100px 2px blue;
+    }
+
+    60% {
+        box-shadow: 0px 0px 100px 2px indigo;
+    }
+
+    80% {
+        box-shadow: 0px 0px 100px 2px violet;
+    }
+}
+
+.vertically-center {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
+
+div.background {
+    width:fit-content;
+    background-image: url(https://source.unsplash.com/featured/450x100);
+    display: table;
+    margin:auto;
+}
+
+#secondpara {
+    font-size: x-large;
+    mix-blend-mode: difference;
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    height: 100px;
+    width: 450px;
+}
+
+#thirdPara {
+    text-align: center;
+    font-size: x-large;
+    height: 500px;
+    background-image: url(https://source.unsplash.com/featured/100x100);
+    /* try removing each of the below rules to see their effect */
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100%;
+}

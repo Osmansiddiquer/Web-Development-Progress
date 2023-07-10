@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="../style.css"> -->
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        p {
+            color: green; 
+            border-radius: 5px;
+            border: solid 2px green !important; 
+            background-color:rgb(165, 191, 50);
+        }
+    </style>
+    <title>CSS 1</title>
+</head>
+
+<body>
+    <h3>Starting with CSS!</h3>
+    <em>Did you know: CSS stands for Cascading Style Sheets</em>
+    <hr>
+    <div>
+        <strong>Inline-CSS:</strong>
+        <p style="color: blue; border-radius: 5px;border: solid 2px green; background-color:rgb(127, 181, 118);">This is a paragraph syled using <strong>inline CSS</strong>: Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam atque optio blanditiis facilis maiores fugit! As you can see, there is no seperate CSS code.</p>
+    
+        Source code:
+        <div class = "code">
+&lt;p style="color: blue; border-radius: 5px;border: solid 2px green; background-color:rgb(127, 181, 118);"> This is a paragraph syled using &lt;strong>inline CSS&lt;/strong>: Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam atque optio blanditiis facilis maiores fugit!&lt;/p>
+        </div>
+    </div>
+    <br><br>
+    <div>
+        <strong>Internal/Embedded-CSS:</strong>
+        <p>This is a paragraph syled using <strong>internal/embedded CSS</strong>: Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam atque optio blanditiis facilis maiores fugit!</p>
+        
+        Source code:
+        <div class = "code">
+&lt;p> This is a paragraph syled using &lt;strong>internal/embedded CSS&lt;/strong>: Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam atque optio blanditiis facilis maiores fugit!&lt;/p>
+        </div>
+        Embedded-CSS:
+        <div class = "code">
+&lt;style>
+    p {
+        color: green; 
+        border-radius: 5px;
+        border: solid 2px green; 
+        background-color:rgb(165, 191, 50);
+    }
+&lt;/style>
+        </div>
+    </div>
+    <br><br>
+    <div>
+        <strong>External-CSS:</strong>
+        <p class="external_paragraph">This is a paragraph syled using <strong>external CSS</strong>: Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam atque optio blanditiis facilis maiores fugit!</p>
+        
+        Source code:
+        <div class = "code">
+&lt;p class="external_paragraph"> This is a paragraph syled using &lt;strong>external CSS&lt;/strong>: Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam atque optio blanditiis facilis maiores fugit!&lt;/p>
+        </div>
+        External-CSS:
+        <div class = "code">
+.external_paragraph {
+    color: rgb(138, 18, 168); 
+    border-radius: 5px;
+    border: solid 2px rgb(166, 27, 124); 
+    background-color:rgb(224, 155, 17);
+}
+        </div>
+    </div>
+    <hr>
+    Notes:
+    <ul>
+        <li> <em>See the source code to find other instances of inline-CSS</em> </li>
+        <li> <em>The CSS that is written later takes precedence unless marked with the "!important' tag (like in line 12)</em> </li>
+    </ul>
+</body>
+</html>

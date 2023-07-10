@@ -1,0 +1,55 @@
+main {
+    min-height: 100vh;
+    position: relative;
+    z-index: 1;
+    background-color: azure;
+    padding: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding-left: 20px;
+}
+body {
+    width: auto;
+    padding: 50px 100px 0px 5px; 
+    background:linear-gradient(0deg, rgb(45, 45, 45),rgb(122, 122, 122));
+    margin: 0;
+}
+footer a:hover{
+    color: pink !important; 
+}
+footer a:visited{
+    color:unset;
+}
+footer {
+    padding-left: 20px;
+    padding-bottom: 20px;
+    color: white;
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    margin:0;
+    border-top: none;
+    top:unset;
+    width: auto;
+    background-color: rgb(122, 112, 255);
+}
+
+.container {
+    background-color: bisque;
+    max-width: 90%;
+    width: 800px;
+    margin: 10px;
+    /* padding and margin, like borders can be set individually */
+    /* order: top - right - bottom - left */
+    padding: 5px 5px 5px 10px;
+    /* if you want to give the same for top-bottom and right-left, then write it as:*/
+    /* order: top/bottom right/left */
+    margin: 10px 0px;
+}
+#second {
+    padding: 0px 100px;
+}
+#third {
+    box-sizing:border-box;
+    padding: 0px 100px;
+}

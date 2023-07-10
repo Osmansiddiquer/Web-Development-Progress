@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="../../prism/prism-light.js"></script>
+    <title>Size Units</title>
+</head>
+
+<body>
+    <header>
+        <h2 class="top-heading">Responsive Size Units</h2>
+    </header>
+    <main>
+        <p class="text-indent after-space">
+            Responsive web design (RWD) is a web design approach to make web pages render well on all screen sizes and
+            resolutions while ensuring good usability. It enables automatic adaption to the screen, whether the content
+            is viewed on a tablet, phone, television, or watch.
+        </p>
+        <h2><u>Relative Length Units</u>:</h2>
+        <p class="text-indent">
+            Relative length units are relative to something else, perhaps the size of the parent element's font, or the
+            size of the viewport. The benefit of using relative units is that with some careful planning you can make it
+            so the size of text or other elements scales relative to everything else on the page. <a
+                href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units"
+                target="_blank" rel="noopener noreferrer">[Detailed guide]</a>
+        </p>
+        <ol>
+            <li><strong><u>em</u></strong>:
+                <p class="text-indent">
+                    The <em>em</em> unit is relative to the font size of the parent container when used to give values
+                    to <strong>typographic properties</strong>, and relative to the font size of the element itself when
+                    dealing with other properties such as <strong>width</strong> or <strong>padding</strong>.
+                </p>
+                <br>
+                <p>1em is 1 times of the font size of the (parent) element.</p>
+                <div class="container">
+                    <h1 id="h-1">This is a first heading</h1>
+                    <h1 id="h-2">This is a second heading</h1>
+                    <h1 id="h-3">This is a third heading</h1>
+                </div>
+                <p>Observe the CSS code below and compare the computed values in px to the assigned values in em. You can verify this using the dev tools.</p>
+                <code class = "language-css">
+.container {
+    font-size: 10px;
+    height: 30em; /*Computed: 300px*/
+}
+
+.container>#h-1{
+    font-size: 2em; /*Computed: 20px*/
+}
+
+.container>#h-2{
+    font-size: 3em;  /*Computed: 30px*/
+}
+
+.container>#h-3{
+    font-size: 5em;  /*Computed: 50px*/
+}
+                </code>
+            </li>
+            <li>
+                <strong><u>rem</u>:</strong>
+                <p class="text-indent">
+                    This is the same as <strong>em</strong> but is relative to html root element instead of the parent. This is helpful because you can change the font size of the all the elements in the page by just changing the font size of the root html. So instead of setting font-size in pixels (px), use <strong>rem</strong>.
+                </p>
+            </li>
+            <li>
+                <strong><u>vw and vh</u>:</strong>
+                <p class="text-indent">
+                    1vw is 1% of the viewport's width, and 1vh is the 1% of the viewport's height. See the container below, and the heading in it scaling with the viewport size.
+                </p>
+                <div class="container" id="vwh-example">
+                    <h1>This is a heading and the background color is white.</h1>
+                </div>
+                <code class="language-css">
+#vwh-example {
+    width: 50vw;
+    height: 30vh;
+    margin: 10px auto;
+}
+
+#vwh-example>h1 {
+    font-size: 3vw;
+}
+                </code>
+            </li>
+        </ol>
+    </main>
+    <footer>
+        Further Reading:
+        <ul>
+            <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Responsive_Design" target="_blank" rel="noopener noreferrer">Responsove Design Guide - MDN Docs</a>
+        </ul>
+    </footer>
+</body>
+
+</html>

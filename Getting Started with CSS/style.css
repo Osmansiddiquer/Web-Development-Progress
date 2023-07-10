@@ -1,0 +1,21 @@
+.code {
+    white-space: pre-wrap;
+    font-family: 'Courier New', Courier, monospace;
+    display: block;
+    border: 5px solid blueviolet;
+    border-radius: 20px;
+    background-color: rgb(53, 174, 170);
+}
+
+.external_paragraph {
+    color: rgb(138, 18, 168);
+    border-radius: 5px;
+    border: solid 2px rgb(166, 27, 124);
+    background-color: rgb(224, 155, 17);
+}
+
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    width: 90%;
+    background-color: azure;
+}

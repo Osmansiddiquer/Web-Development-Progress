@@ -1,0 +1,167 @@
+.Border {
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+.redBg {
+    background-color: red;
+}
+
+.whiteBg {
+    background-color: white;
+}
+
+#mainBox {
+    display: inline;
+}
+
+/* Copied from Mozilla website */
+details {
+    position: relative;
+    top: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    padding: 0.5em 0.5em 0;
+    margin-bottom: 5px;
+    transition: 250ms;
+}
+
+summary {
+    transition: 250ms;
+    font-weight: bold;
+    margin: -0.5em -0.5em 0;
+    padding: 0.5em;
+}
+
+details[open] {
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+details[open] summary {
+    border-bottom: 1px solid #aaa;
+    margin-bottom: 0.5em;
+}
+
+/* Until here */
+
+code, .code {
+    white-space: pre-wrap !important;
+    font-family: 'Courier New', Courier, monospace;
+    display: block !important;
+    border: 5px solid blueviolet !important;
+    border-radius: 20px !important;
+    background-color: rgb(223, 255, 254) !important;
+    margin: auto !important;
+    max-width: fit-content !important;
+    margin-top: 20px !important;
+    padding-right: 30% !important;
+    padding-left: 20px !important;
+    max-width: 80%;
+}
+
+.comment {
+    color: green;
+}
+
+.external_paragraph {
+    color: rgb(138, 18, 168);
+    border-radius: 5px;
+    border: solid 2px rgb(166, 27, 124);
+    background-color: rgb(224, 155, 17);
+}
+
+a {
+    color: blue;
+}
+
+a:hover {
+    color: rgb(43, 147, 226) !important;
+    text-decoration: none;
+}
+
+a:visited {
+    color: blueviolet;
+}
+
+.top-heading {
+    text-align: center;
+    text-decoration: underline;
+}
+
+body {
+    font-size: larger;
+    width: 70%;
+    background-color: azure;
+    color: rgb(56, 61, 87);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding: 10px;
+    padding-bottom: 50px;
+    padding-left: 30px;
+}
+
+@media (max-width: 800px) {
+    body {
+        width: 90%;
+        font-size: medium;
+    }
+    
+}
+footer {
+    top:99%;
+    padding: 5px;
+    padding-top: 20px;
+    padding-bottom: 30px;
+    position: fixed;
+    width:98.735%;
+    left: 0px;
+    bottom: 0px;
+    border-top: 2px solid black;
+    display: block;
+    background-color: rgb(255, 255, 255);
+}
+footer:hover {
+    top:unset;
+    bottom: 0px;
+}
+table,td,th {
+    background-color: rgb(207, 207, 207);
+    vertical-align: center;
+}
+table {
+    padding: 5px;
+    background-color: gray;
+    table-layout: auto;
+    margin-top: 20px;
+    border-collapse: separate;
+    border-radius: 5px;
+}
+td, th {
+    text-align: center;
+    min-height: 20px;
+    padding: 10px;
+}
+.inline-code {
+    text-indent: 0;
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+    background-color: gray;
+    margin:2px 0px;
+    padding: 2px;
+    border-radius: 5px;
+    display: inline-block;
+}
+p {
+    line-height: 1.5em;
+}
+pre.normal{
+   font-family: inherit;
+   white-space: pre-wrap;
+   line-height: 1.5em;
+}
+
+section {
+    padding-bottom: 10px;
+    border-bottom: 2px solid black;
+}

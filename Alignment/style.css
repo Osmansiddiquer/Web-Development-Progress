@@ -1,0 +1,125 @@
+@import url(../prism/prism-light.css);
+@import url(../style.css);
+
+* {
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+}
+
+main {
+    min-height: 100vh;
+    position: relative;
+    z-index: 1;
+    background-color: azure;
+    padding: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+header>.sub-line {
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+body {
+    color: rgb(227, 227, 227);
+    width: auto;
+    padding: 10px;
+    background: linear-gradient(0deg, rgb(45, 45, 45), rgb(122, 122, 122));
+    margin: 0;
+
+    font-size: medium;
+    background-color: azure;
+    color: rgb(56, 61, 87);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding: 10px;
+    padding-bottom: 50px;
+    padding-left: 30px;
+}
+
+body>* {
+    margin-right: 30%;
+}
+
+@media (max-width: 800px) {
+    body>* {
+        margin-right: 10%;
+    }
+}
+
+@media (max-width: 500px) {
+    body {
+        font-size: small;
+        padding: 0;
+    }
+
+    body>* {
+        margin: 0;
+
+    }
+}
+
+header>.top-heading {
+    font-variant: small-caps;
+    font-weight: 500;
+    font-size: 6vw;
+}
+
+footer a:hover {
+    color: pink !important;
+}
+
+footer a:visited {
+    color: unset;
+}
+
+footer {
+    padding-left: 20px;
+    padding-bottom: 20px;
+    color: white;
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    border-top: none;
+    top: unset;
+    width: auto;
+    background-color: rgb(122, 112, 255);
+}
+
+ul,
+ol {
+    margin-left: 5%;
+    list-style-position: inside;
+}
+
+li {
+    line-height: 1.5em;
+}
+
+header {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    padding: 10px;
+    color: white;
+    position: sticky;
+    top: 0;
+    margin-bottom: -10px;
+    padding-bottom: 20px;
+    width: auto;
+    background-color: rgb(122, 112, 255);
+}
+
+.after-space {
+    margin-bottom: 10px;
+}
+
+.before-space {
+    margin-top: 10px;
+}
+
+.text-indent {
+    text-indent: 30px;
+}

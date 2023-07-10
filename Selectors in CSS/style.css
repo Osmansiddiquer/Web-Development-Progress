@@ -1,0 +1,86 @@
+/*Examples of element selectors*/
+
+p {
+    text-align: justify;
+}
+
+u {
+    background-color: rgba(255,41,134,0.13);
+}
+
+a {
+    text-decoration: none;
+    color: blue;
+}
+
+a:hover {
+    color:rgb(43, 147, 226);
+}
+
+/*ID selectors*/
+#idSelector {
+    font-family: cursive;
+    border-radius: 20px;
+    margin:auto;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: blue;
+    width: 50%;
+    box-shadow: 2px 2px 20px 20px #67aef0;
+    /* The first value (2px) represents the offset on the x-axis (offset-x)
+The second (another 2px) represents the offset on the y-axis (offset-y)
+The next 20px is for the blur-radius, that is, how blurry you want the shadow to be.
+The 20px value is the spread radius (how far you want the shadow to spread)
+The last value is the shadow color – in this case, #7fecad. */
+}
+
+#idSelector:hover {
+    border-radius: 20px;
+    margin:auto;
+    margin-top: 20px;
+    padding: 20px;
+    transition: 250ms;
+    background-color: lightblue;
+    width: 50%;
+}
+/*Examples of class selectors*/
+.menu {
+    margin-top: 10px;
+    background-color: black;
+}
+.menu-item
+{
+    border-right: 1px solid gray;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: white;
+    text-align: center;
+    padding-right: 5px;
+    margin: 0px;
+    background-color: black;
+    marker: none;
+    display: inline;
+}
+.menu-item:hover 
+{
+    color: red;
+}
+.comment {
+    color: green;
+}
+/*Unforgiving Group Selectors*/
+#GroupSelectors h3, .special
+{
+    border-radius: 5px;
+    border: 2px solid red;
+    color: blue;
+}
+
+/*Forgiving Group Selectors*/
+/*
+:is(#GroupSelectors h3, .special) 
+{
+    border-radius: 5px;
+    border: 2px solid red;
+    color: blue;
+}
+*/

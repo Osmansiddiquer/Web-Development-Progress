@@ -1,0 +1,83 @@
+@import url("../Alignment/style.css");
+
+.box {
+    font-size: medium;
+    border: 2px solid rgb(119, 137, 0);
+    width: 150px;
+    height: 150px;
+    margin: 2px;
+    background-color: rgba(255, 230, 0, 0.392);
+    border-radius: 20px;
+    padding: 10px;
+    text-align: center;
+    overflow-y: scroll;
+    display: inline-block;
+}
+body *::-webkit-scrollbar{
+    display: none;
+}
+#box1 {
+    background-color: lightblue;
+    visibility: visible;
+}
+
+#box2 {
+    background-color: bisque;
+    visibility: hidden;
+}
+
+#box3 {
+    background-color: lightsalmon;
+    display: none;
+}
+
+#box4 {
+    background-color: darkseagreen;
+}
+
+#container-2 {
+    position: relative;
+    border: 2px solid rgb(119, 137, 0); 
+    width: 100%;
+    height: 600px;
+    margin: 2px;
+    background-color: rgb(173, 173, 173);
+    border-radius: 20px;
+    padding: 10px;
+}
+
+#box-z-1 {
+    position: absolute;
+    top: 41px;
+    left: 14%;
+
+    z-index: 1;
+}
+
+#box-z-2 {
+    position: absolute;
+    top: 333px;
+    left: 12%;
+    z-index: 2;
+}
+
+#box-z-3 {
+    position: absolute;
+    top: 132px;
+    left: 31%;
+    z-index: 3;
+}
+
+#box-z-4 {
+    position: absolute;
+    top: 262px;
+    left: 35%;
+    z-index: 4;
+}
+
+#box-z-5 {
+    position: absolute;
+    top: 223px;
+    left: 50%;
+    z-index: 5;
+}

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="specific-style.css">
+    <script src="../prism/prism-light.js"></script>
+    <title>Alignment</title>
+</head>
+<body>
+    <header>
+        <h1 class="top-heading">Alignment</h1>
+    </header>
+    <main>
+        <p>
+            This tutorial discusses float, clear, and other alignment techniques.
+        </p>
+        <div class="container">
+            <div class="item" >
+                <p class="para">
+                    <h3>Fruits</h3>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas, architecto.
+                </p>
+            </div>
+            <div class="item">
+                <p class="para">
+                    <h3>Electronics</h3>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas, architecto.
+                </p>
+            </div>
+            <div class="item">
+                <p class="para">
+                    <h3>Stationary</h3>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas, architecto.
+                </p>
+            </div>
+        </div>
+        <p>To center an element horizontally in its parent container, use <span class="inline-code">margin: * auto</span> to set left and right margins to auto.</p>
+        <p class="after-space">
+            <h3><u>Floating</u>:</h3>
+            <p class="before-space after-space text-indent">
+                The  <span class="inline-code">float</span> CSS property places an element on the left or right side of its container, allowing text and inline elements to wrap around it. The same effect can be achieved by using <span class="inline-code">position: absolute</span> however, the element is removed from the normal flow of the page (floated to left or right), though still remaining a part of the flow in the sense that flow is continued after the element. Absolute positioning takes the element out of the normal document flow. <em>Any absolutely positioned element is completely ignored when regarding normal elements.</em>
+            </p>
+        </p>
+        <div class="container">
+            <div id="fruits" class="item" >
+                <p id="fruitspara" class="para">
+                    <h3>Fruits</h3>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas, architecto.
+                </p>
+            </div>
+            <div id="electronics" class="item">
+                <p id="electronicspara" class="para">
+                    <h3>Electronics</h3>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas, architecto.
+                </p>
+            </div>
+            <p style="text-align: justify;">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis recusandae vero placeat tenetur, possimus earum velit dolorem iste quos explicabo harum repellendus numquam ullam provident quaerat beatae minus a doloribus maxime similique vel! Aspernatur voluptatem incidunt ratione culpa explicabo consectetur eligendi quisquam quis fugiat, iure molestiae eos, reiciendis doloremque quae.
+            </p>
+            <!-- <div id="stationary" class="item">
+                <p id="stationarypara" class="para">
+                    <h3>Stationary</h3>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas, architecto.
+                </p>
+            </div> -->
+        </div>
+        <p class="text-indent before-space after-space">
+            There is however, a problem. Since the float takes the elements out of the flow, there is no need for the container to fit them inside it. Therefore, the floated element overflow outside and the container only fits to fit the non-floated content. To get over this, use <span class="inline-code">overflow: hidden;</span> (less hacky but still isn't the proper way) or place an empty element after the floated elements with the <span class="inline-code">clear</span> property set (the infamous <strong>clearfix hack</strong>).
+        </p>
+        <p class="after-space">
+             There is now a <a href="https://caniuse.com/flow-root" target="_blank" rel="noopener noreferrer">proper method</a> to solve this problem. Use:  <span class="inline-code">display: flow-root;</span>
+        </p>
+        <code class="language-css">
+#fruits, #electronics, #stationary {
+    float: left;
+    width: 30%;
+    margin-inline: 1.5%;
+    height: 200px;
+}
+
+#electronics {
+    float: right;
+}
+
+.container {
+    background-color: bisque;
+    border: 5px solid rgb(138, 116, 88);
+    border-radius: 10px;
+    padding: 5px 15px;
+    width: 85%;
+    margin: 32px auto;
+    box-shadow: 5px 5px 20px 20px;
+    overflow: hidden;
+}
+        </code>
+
+        <p class="after-space">
+            <h3><u>Clear</u>:</h3>
+            <p class="before-space after-space text-indent">
+                The  <span class="inline-code">clear</span> CSS property allows an element to not be interfered with by other float elements around it</em>
+            </p>
+        </p>
+        <div class="container">
+            <div id="fruits" class="item" >
+                <p id="fruitspara" class="para">
+                    <h3>Fruits</h3>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas, architecto.
+                </p>
+            </div>
+            <div id="electronics" class="item">
+                <p id="electronicspara" class="para">
+                    <h3>Electronics</h3>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas, architecto.
+                </p>
+            </div>
+            <p style="clear:both; text-align: center;">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis recusandae vero placeat tenetur, possimus earum velit dolorem iste quos explicabo harum repellendus numquam ullam provident quaerat beatae minus a doloribus maxime similique vel! Aspernatur voluptatem incidunt ratione culpa explicabo consectetur eligendi quisquam quis fugiat, iure molestiae eos, reiciendis doloremque quae.
+            </p>
+            <div id="stationary" class="item">
+                <p id="stationarypara" class="para">
+                    <h3>Stationary</h3>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas, architecto.
+                </p>
+            </div>
+        </div>
+        <p>You can chose to clear the element of specific floated elements: <span class="inline-code">clear: both;</span>, <span class="inline-code">clear: left</span>, <span class="inline-code">clear: right;</span>
+
+        <p class="text-indent">
+            Alas, the misuse of float has forced it to change from mearly a convenience to wrap text around an image, to designing web layouts. And although flexbox has come to the rescue, will it be any good?
+        </p>
+    </main>
+    <footer>
+        <p>
+            Refrences:
+            <ol>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/float" target="_blank" rel="noopener noreferrer">float - MDN docs</a></li>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/clear" target="_blank" rel="noopener noreferrer">clear - MDN docs</a></li>
+            </ol>
+        </p>
+    </footer>
+</body>
+</html>

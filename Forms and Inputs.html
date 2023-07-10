@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"> <!--added later-->
+    <title>Forms and Inputs</title>
+</head>
+
+<body>
+    <h1 class="top-heading">HTML FORMS TUTORIAL</h1>
+    <br><br>
+    <form action="backend.php">
+        <!--input tags inside the form-->
+        <label for="name">Name: </label>
+        <input type="text" id="name" name="name">
+        <br><br><!--Either use br or div-->
+        <label for="role">Role: </label>
+        <input type="text" id="role" name="role">
+        <!-- The better way -->
+        <br>
+        <hr>
+        <div>
+            <!--clicking on the label is the same as cliking on the input field-->
+            <em>The better way</em>
+            <div>Age: <input type="number"></div>
+            <br>
+            <div>ID: <input type="text" name="id" id="id"></div>
+            <br>
+            <!-- for must be equal to id -->
+            <div><label for="email">Email: </label><input type="email" name="email" id="email"></div>
+            <br>
+            <div><label for="date">Date: </label><input type="datetime-local" name="date" id="date"></div>
+            <br>
+            <!-- Name of the radio buttons must be the same! -->
+            <div>Male  <input type="radio" name="gender"> Female<input type="radio" name="gender" id=""></div>
+            <br>
+            <div><label for="color"></label>Color: <input type="color" name="color" id="color"></div>
+            <br>
+            <div><label for="file">File: </label><input type="file" name="file" id="file"></div>
+            Write about yourself
+            <div><textarea name="" id="" cols="30" rows="10"></textarea></div>
+        </div>
+        <br>
+        <!-- The backend recongnizes the tag using the "name" attribute -->
+        <div>
+            <label for="car">Car</label>
+            <select name="myCar" id="car">
+                <option value="Toyota">Toyota</option>
+                <option value="Honda" selected>Honda</option>
+                <option value="Mazda">Mazda</option>
+            </select>
+        </div>
+        <br>
+        <div><input type="submit" value="Submit Now">&nbsp;&nbsp;<input type="reset" value="Reset"></div>
+    </form>
+</body>
+
+</html>

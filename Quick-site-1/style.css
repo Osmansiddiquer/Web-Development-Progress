@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'Bruno Ace SC', cursive;
+    background-color: black;
+    color: white;
+}
+header {
+    padding-top: 10px;
+}
+
+.navbar>ul {
+    display: flex;
+    flex-direction: row;
+    margin-left: 30px;
+}
+.navbar>ul>li{
+    padding: 10px;
+    list-style:none;
+    font-size: 20px;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 50vh;
+    min-height: 500px;
+    text-align: center;
+    gap: 5vh;
+    padding: 0 30px;
+    position: relative;
+}
+
+section::after {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    content: '';
+    border-bottom: 2px solid;
+}
+section::before {
+    content: '';
+    z-index: -1;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    opacity: 0.3;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-image: url(https://source.unsplash.com/featured/1920x1080);
+}

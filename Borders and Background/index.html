@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Background and Borders</title>
+</head>
+
+<body>
+    <h2>Background and Borders</h2>
+    <hr>
+    <p id="first-paragraph">
+        This is the first paragraph. As you can see, the individual borders edges and corners can be styled
+        individually.
+    </p>
+    <strong><u>CSS rules for the above paragraph</u></strong>:
+    <div class="code">
+#first-paragraph {
+    background-color: #ff0000;
+    height: 100px;
+    width: 450px;
+    <span class="commment">/* Can be combined */</span>
+    border-color: #000;
+    border-width: 10px;
+    border-style: double;
+    border-radius: 20px;
+    <span class="comment">/* border: 10px solid double */</span>
+    margin: auto;
+    border-top-style: solid;
+    border-top-right-radius: 100px;
+    border-bottom-left-radius: 100px;
+    margin-bottom: 20px;
+    padding: 20px; <span class="comment">/* So the text doesn't overflow */</span>
+}
+    </div>
+    <div class="wrapper">
+        <div class="card">
+            <div class="vertically-center" style="padding: 10px;">
+                <p style="font-variant: small-caps; line-height: 1.5em;">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae labore impedit vero, reprehenderit
+                    maxime harum. Veritatis at alias necessitatibus, ducimus earum numquam beatae quis expedita,
+                    voluptatem eius voluptatibus? Aspernatur, officia?
+                </p>
+            </div>
+        </div>
+    </div>
+    <div>
+        <pre>
+            <p></p>
+        </pre>
+        <strong><u>CSS rules for the above card</u></strong>:
+        <div class="code">
+.card {
+    display: table;
+    top: 50px;
+    position: relative;
+    height: 450px;
+    width: 50%;
+    max-width: 300px;
+    background-color: rgb(57, 52, 52);
+    color:white;
+    margin: auto;
+    border-radius: 20px;
+    transition: 1s;
+}
+
+.card::after { /*adds an rgb background behind the card*/
+    --neg-border-width: -5px;
+    position: absolute;
+    top: var(--neg-border-width); bottom: var(--neg-border-width);
+    left: var(--neg-border-width); right: var(--neg-border-width);
+    background: linear-gradient(60deg, red, orange, blue, indigo, violet);
+    content: ''; /*this is important*/
+    z-index: -1;
+    border-radius: 25px;
+    box-shadow: 0px 0px 100px 2px red;
+    animation: rgb 4s infinite;
+    transition: 1s;
+    background-size: 200% 200%;
+    background-position: 0% 50%;
+}
+.wrapper {
+    transition: 1s;
+}
+.wrapper:hover {
+    scale: 1.1;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.card:hover::after{
+    animation: rgb 4s infinite, rotate-bg 2s infinite;
+    rotate: 15deg;
+}
+
+@keyframes rotate-bg{
+    0% {
+        background-position: 0% 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes rgb {
+    0% {box-shadow: 0px 0px 100px 2px red;}
+    20% {box-shadow: 0px 0px 100px 2px orange;}
+    40% {box-shadow: 0px 0px 100px 2px blue;}
+    60% {box-shadow: 0px 0px 100px 2px indigo;}
+    80% {box-shadow: 0px 0px 100px 2px violet;}
+}
+
+.vertically-center {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
+        </div>
+    </div>
+    <hr>
+
+    <h3>Backgrounds:</h3>
+    <div class="background">
+        <p id="secondpara" class="vertically-center">
+            This is the second paragraph
+        </p>
+    </div>
+    <div class="code">
+div.background {
+    width:fit-content;
+    background-image: url(https://source.unsplash.com/featured/450x100);
+    display: table;
+    margin: auto;
+}
+
+#secondpara {
+    font-size: x-large;
+    mix-blend-mode: difference;
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    height: 100px;
+    width: 450px;
+}
+    </div>
+    <p id="thirdPara" class="Border">
+        This is the third paragraph.
+    </p>
+</body>
+
+</html>

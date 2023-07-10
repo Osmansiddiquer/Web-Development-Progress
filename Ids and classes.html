@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Ids and Classes</title>
+</head>
+<body>
+    <h3 class="top-heading">IDs and CLASSES (really basic)</h3>
+    <p><strong>id</strong> is the name of the element and it should not be repeated. Behaviour is undefined although modern behaviours are designed to be tolerant to such stupidities.</p>
+
+    <p><em>As HTML and CSS are designed to be very fault tolerant, most browsers will in fact apply the specified styles to all elements given the same id. However, this is considered bad practice as it defies the W3C spec. <br>
+    <ol>
+        Applying the same id to multiple elements is invalid HTML and should be avoided.</ol></em></p>
+    <p>Ids are used to target specific elements using javascript</p>
+    
+    <!-- Elements can be assigned multiple classes by seperating them with a space but they can only have one unique id -->
+
+    <div id = "mainBox" class = "redBg Border">
+        This is a div named mainBox and is part of the redBg class and the Border class. Although it is confusing cuz I have set mainBox to be an inline element specifically in the CSS.
+    </div>
+    <br><br>
+    <span class="redBg">
+        This a span with the same redBg class
+    </span>
+
+    <p>Some emmet things copied from the tutorial source</p>
+    <!-- Emmet -->
+    <!-- . is for class and # is for id -->
+    <span class="redBg"></span>
+    <span id="mainSpan"></span>
+    <div class="redBg blackBorder anotherClass"></div>
+
+    <!-- Emmet takes div tag as default -->
+    <div class="blackBackground"></div>
+
+    <!-- Creating multiple elements using Emmet -->
+    <!-- span.myClass.myClass2.myClass3*4 + <Tab> to print 4 similar elements using Emmet -->
+    <span class="myClass myClass2 myClass3">First</span>
+    <span class="myClass myClass2 myClass3">Second</span>
+    <span class="myClass myClass2 myClass3">Third</span>
+    <span class="myClass myClass2 myClass3">Fourth</span>
+</body>
+</html>

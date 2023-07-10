@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="style.css">
+    <title>The Box Model</title>
+</head>
+
+<body>
+    <main>
+        <h1 class="top-heading">The Box Model</h1>
+        <hr>
+        <div class="container Border" id="first">
+            <h3>This is the first div</h3>
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis praesentium iste accusantium
+                repudiandae
+                odit deserunt nostrum sed, ea illum, consequuntur voluptatem? Natus, rerum!. See its box model.
+            </p>
+        </div>
+
+        <div class="container Border" id="second">
+            <h3>This is the second div</h3>
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis praesentium iste accusantium
+                repudiandae
+                odit deserunt nostrum sed, ea illum, consequuntur voluptatem? Natus, rerum!
+            </p>
+        </div>
+
+        <p>The final Width and Height of the element is calculated as:</p>
+        <table>
+            <tbody>
+                <tr>
+                    <td><strong>Width</strong></td>
+                    <td>width + padding-left + padding-right + border-left + border-right</td>
+                </tr>
+                <tr>
+                    <td><strong>Height</strong></td>
+                    <td>height + padding-top + padding-bottom + border-top + border-bottom</td>
+                </tr>
+            </tbody>
+        </table>
+        <p><em>where 'width' and 'height' are the properties set in the CSS.</em></p>
+        <p>This is also the reason that setting width to 100% of child, causes it to overflow as the padding and borders increase its width. To get around this, you can use the box-sizing property. Box sizing can have two values (<em>other than the global values: inherit, unset etc.</em>
+            ):</p>
+        <ol>
+            <li><span class="inline-code">content-box</span></li>
+            <li><span class="inline-code">border-box</span></li>
+        </ol>
+        <p>
+            The default in such problematic cases is often the <span class="inline-code">content-box</span>. Setting it to <span class="inline-code">border-box</span> sets the final width and height to be the one specified in the rules which helps with layout. Heck, you might as well use the universal rule to set everything to border-box:
+        </p>
+        <div class="code">
+* {
+    box-sizing: border-box; 
+}
+        </div>
+        <div class="container Border" id="third">
+            <h3>This is the third div</h3>
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis praesentium iste accusantium
+                repudiandae
+                odit deserunt nostrum sed, ea illum, consequuntur voluptatem? Natus, rerum!
+            </p>
+        </div>
+        <p>Observe the difference: </p>
+        <div class="code">
+#second {
+    padding: 0px 100px;
+}
+#third {
+    box-sizing:border-box;
+    padding: 0px 100px;
+}
+        </div>
+    </main>
+    
+    <footer>
+        Refrences:
+        <ol>
+            <li><a href="https://css-tricks.com/the-css-box-model/" target="_blank" rel="noopener noreferrer">The Box Model</a></li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing" target="_blank" rel="noopener noreferrer">Box Sizing</a></li>
+        </ol>
+    </footer>
+</body>
+
+</html>

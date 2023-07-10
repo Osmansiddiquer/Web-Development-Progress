@@ -1,0 +1,58 @@
+@import url(../Alignment/style.css);
+
+header>.top-heading{
+    font-size: 6vw;
+}
+
+@media (min-width: 1200px) {
+    header>.top-heading{
+        font-size: 60px;
+    }
+}
+
+div.container {
+    margin: 10px 10%;
+    row-gap: 10px;
+    border: 5px solid brown;
+    background-color: rgb(255, 228, 228);
+    border-radius: 20px;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+div.card {
+    padding: 10px;
+    flex: 1 1 300px;
+    border: 2px solid purple;
+    background-color: rgb(255, 188, 209);
+    border-radius: 5px;
+    margin: 10px 10px;
+}
+
+#card-1 {
+    box-shadow: 5px 5px rgb(65, 0, 70);
+}
+
+#card-2 {
+    box-shadow: -6px 9px 10px rgb(0, 70, 1);
+}
+
+#card-3 {
+    box-shadow: inset 0px 0px 50px -10px rgb(0, 0, 0);
+}
+
+body {
+    box-shadow: inset 0px 0px 100px 1px rgb(0, 251, 255);
+    animation: body-bs 2s infinite;
+}
+
+@keyframes body-bs {
+    0% {
+        box-shadow: inset 0px 0px 100px 1px rgb(0, 238, 255);
+    }
+    50% {
+        box-shadow: inset 0px 0px 100px 1px rgba(255, 157, 0, 0);
+    }
+}
+

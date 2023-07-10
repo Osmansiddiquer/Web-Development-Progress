@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="../prism/prism-light.js"></script>
+    <title>Shadows</title>
+</head>
+
+<body>
+    <header>
+        <h1 class="top-heading">Box Shadow and Text Shadow</h1>
+    </header>
+    <main>
+        <h2><strong><u>Box-Shadow</u>:</strong></h2>
+        <p class="text-indent">Come to think of it, I haven't written anything about this yet, even though I have been using this for quite some time now. The box-shadow CSS property adds shadow effects around an element's frame. You can set multiple effects separated by commas. A box shadow is described by <strong>X and Y offsets relative to the element, blur and spread radius, and color</strong>. As you can see, the effect of border-radius propery is also extended to the box-shadow.</p>
+        <div class="container">
+            <div class="card" id="card-1"><h3>Card 1</h3>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni dolor iste rem non excepturi quibusdam consequuntur porro eveniet quod soluta sint odio laudantium quis, placeat dolorem perspiciatis, quam libero officiis cum architecto!</div>
+            <div class="card" id="card-2"><h3>Card 2</h3>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni dolor iste rem non excepturi quibusdam consequuntur porro eveniet quod soluta sint odio laudantium quis, placeat dolorem perspiciatis, quam libero officiis cum architecto!</div>
+            <div class="card" id="card-3"><h3>Card 3</h3>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni dolor iste rem non excepturi quibusdam consequuntur porro eveniet quod soluta sint odio laudantium quis, placeat dolorem perspiciatis, quam libero officiis cum architecto!</div>
+        </div>
+        <code class = "language-css">
+#card-1 {
+    box-shadow: 5px 5px rgb(65, 0, 70);
+}
+
+#card-2 {
+    box-shadow: -6px 9px 10px rgb(0, 70, 1);
+}
+
+#card-3 {
+    box-shadow: inset 0px 0px 50px -10px rgb(0, 0, 0);
+}
+        </code>
+        <br>
+        <strong><u>Possible Syntax (without inset)</u>:</strong>
+        <ol style="text-align: center; font-weight: bold;">
+            <li><span class="inline-code">box-shadow: X-Offset Y-Offset color;</span></li>
+            <li><span class="inline-code">box-shadow: X-Offset Y-Offset Blur-Radius color;</span></li>
+            <li><span class="inline-code">box-shadow: X Y Blur-Radius Spread-Radius color;</span></li>
+        </ol>
+        <br>
+<strong><u>Examples</u>:</strong>
+        <code class="language-css">
+/* offset-x | offset-y | color */
+box-shadow: 60px -16px teal;
+
+/* offset-x | offset-y | blur-radius | color */
+box-shadow: 10px 5px 5px black;
+
+/* offset-x | offset-y | blur-radius | spread-radius | color */
+box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+
+/* inset | offset-x | offset-y | color */
+box-shadow: inset 5em 1em gold;
+
+/* Any number of shadows, separated by commas */
+box-shadow:
+    3px 3px red,
+    -1em 0 0.4em olive;
+        </code>
+        <br>
+        <strong><u>About the Inset</u>:</strong>
+        <p class="text-indent after-space">
+            If not specified (default), the shadow is assumed to be a drop shadow (as if the box were raised above the content). The presence of the inset keyword changes the shadow to one inside the frame (as if the content was debossed inside the box). Inset shadows are drawn inside the border (even transparent ones), above the background, but below content. Blur-radius and spread-radius become highly confusing to deal with, with the inset activated.
+        </p>
+        <strong><u>Blur-Radius</u>:</strong>
+        <p class="text-indent after-space">
+            This is a third <length> value. The larger this value, the bigger the blur, so the shadow becomes bigger and lighter. Negative values are not allowed. If not specified, it will be 0 (the shadow's edge is sharp). The specification does not include an exact algorithm for how the blur radius should be calculated.
+            </p>
+            <strong><u>Spread-Radius</u>:</strong>
+            <p class="text-indent after-space">
+                Basically, how big the shadow should be. Can be negative.
+            </p>
+            <em>Use the box-shadow generator to fine tune the confusing parameters.</em>
+    </main>
+    <footer>
+        Resources:
+        <ol>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow" target="_blank" rel="noopener noreferrer">Box-Shadow - MDN Docs</a></li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_backgrounds_and_borders/Box-shadow_generator" target="_blank" rel="noopener noreferrer">Box Shadow Generator</a></li>
+        </ol>
+    </footer>
+</body>
+
+</html>

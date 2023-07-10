@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="../prism/prism-light.js"></script>
+    <title>CSS 9 Properties</title>
+</head>
+
+<body>
+    <header>
+        <h2 class="top-heading" style="font-variant: normal; font-size: xx-large;">Display and Position Properties</h2>
+    </header>
+    <main>
+        <section>
+            <h2><u>Display</u>:</h2>
+            <p class="before-space text-indent">The display CSS property sets whether an element is treated as a block
+                or
+                inline box and the layout used for its children, such as flow layout, grid or flex. The display property
+                sets an element's inner and outer display types. The outer type sets an element's participation in flow
+                layout; the inner type sets the layout of children.</p>
+            <br>
+            <h3 id="test-1" class="Border">Consider this heading</h3>
+            <br>
+            <p>
+                Say we want to center it, but a simple <span class="inline-code">margin: auto</span> doesn't work even
+                though, it works on the heading below.
+            </p>
+            <br>
+            <h3 class="Border" id=test-2>Consider this heading</h3>
+            <p>
+                This is because, the first heading takes up all the available horizontal space, and the later one is set
+                to
+                <span class="inline-code">width: fit-content</span>
+            </p>
+            <code class="language-css">
+#test-1 {
+    margin:auto;
+}
+#test-2 {
+    margin:auto;
+    width: fit-content;
+}
+        </code>
+            <br>
+            <h3>Outer Display Types:</h3>
+            <p>
+                <pre class="normal before-space text-indent">
+These keywords specify the element's outer display type, which is essentially its role in flow layout:
+    <span class="inline-code">block</span>:
+        The element generates a block box, generating line breaks both before and after the element when in the normal flow.
+    <span class="inline-code">inline</span>:
+        The element generates one or more inline boxes that do not generate line breaks before or after themselves. In normal flow, the next element will be on the same line if there is space.
+    <span class="inline-code">inline-block</span>:
+        This is the same as <span class="inline-code">inline</span> but you can set width and height of the elements.
+                </pre>
+            </p>
+            <p class = "after-space">
+                Look into this more <a href="https://www.samanthaming.com/pictorials/css-inline-vs-inlineblock-vs-block/"
+                    target="_blank" rel="noopener noreferrer">here</a>
+            </p>
+            
+            <h3>Inner Display Types:</h3>
+            <p>This is still beyond me at this point, we will get into this later.</p>
+            <div id="testing-ground" class="container">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus rem harum, consequatur neque unde
+                repellendus est maiores consequuntur ipsam, tenetur ratione facere molestiae.
+                <div id="inline" class="container">I am an inline element</div>
+                <div id="block" class="container">I am a block</div>
+                <div id="inline-block" class="container">Me inline-block</div>
+                <div id="inline-block" class="container">Me inline-block</div>
+                <div id="inline-block" class="container">Me inline-block</div>
+            </div>
+            <code class="language-css">
+#inline {
+    display: inline;
+    width: 20%;    /*❌ doesn't work*/
+    height: 250px; /*❌ doesn't work*/
+    margin: auto;  /*❌ doesn't work*/
+}
+#block {
+    display: block;
+    width: 20%;
+    height: 250px;
+    margin: auto; 
+}
+#inline-block {
+    display: inline-block;
+    width: 20%;
+    height: 250px;
+    margin: auto;  /*❌ doesn't work*/
+}
+        </code>
+            <br>
+            <em><u>Note</u>: an inline element cannot contain a block element. Look <a
+                    href="http://web.simmons.edu/~grovesd/comm244/notes/week4/block-inline" target="_blank"
+                    rel="noopener noreferrer">here</a>. Use inline-block</em>
+            <p class="before-space">
+                Even if you set the width of a block element to be less than 100%, it will still occuoy the full line.
+                If
+                you want multiple block elements in the same flow as an inline element would be, use <span
+                    class="inline-code">inline-block</span>.
+            </p>
+            <img src="Screenshot 2023-06-20 063729.png" alt="" style="width: 500px; margin: 10px auto; display: block"
+                class="Border">
+            <p>
+                Center multiple inline-block elements by putting them in a sepearate block container and using <span
+                    class="inline-code">width: *; margin: auto;</span>. Naturally, you can't expect them to be in normal
+                flow and be centered. Not the best way, but a way.
+            </p>
+            <div class="container" style="width: 500px; margin: auto;">
+                <div id="inline-block" class="container" style="width: 32.5%">Me inline-block</div>
+                <div id="inline-block" class="container" style="width: 32.5%">Me inline-block</div>
+                <div id="inline-block" class="container" style="width: 32.5%">Me inline-block</div>
+            </div>
+            <em>Also, <span class="inline-code">width: fit-content;</span> is completely different to what I thought it
+                was.</em>
+        </section>
+        <section>
+            <br>
+            <h2><u>Position</u>:</h2>
+            <p>
+                The position property in CSS can have the following values:
+                <code class = "language-css">
+position: static;
+position: relative;
+position: absolute;
+position: fixed;
+position: sticky;
+                </code>
+                <p class = "text-indent before-space">
+                    By default, all positions are set to <span class="inline-code">static</span>. In <span class="inline-code">static</span> position, The element is positioned according to the normal flow of the document. The <span class="inline-code">top</span>, <span class="inline-code">right</span>, <span class="inline-code">bottom</span>, <span class="inline-code">left</span>, and <span class="inline-code">z-index</span> properties have no effect.
+                </p>
+            </p>
+            <br>
+            <div class = "before-space">
+                <h4><u>Relative Positioning</u>: </h4>
+                <p class = "text-indent">
+                    A relatively positioned element is an element whose computed position value is relative to its original position. The top and bottom properties specify the vertical offset from its normal position; the left and right properties specify the horizontal offset. When both the right CSS property and the left CSS property are defined, the position of the element is overspecified. In that case, the left value has precedence when the container is left-to-right. The case is similar for the top, and bottom properties. <strong>The element is positioned according to the normal flow of the document</strong>, and the offset does not affect the position of any other elements; thus, the space given for the element in the page layout is the same as if position were static.
+                </p>
+                <br>
+                <h4><u>Absolute Positioning</u>: </h4>
+                <p class = "text-indent">
+                    An absolutely positioned element is an element whose computed position value is  relative to its closest positioned ancestor, if any; otherwise, it is placed relative to the initial containing block. The top and bottom properties specify.<strong>The element is removed from the normal document flow, and no space is created for the element in the page layout</strong>. If the element has margins, they are added to the offset.
+                </p>
+                <p class = "text-indent" id = "positioned-element">
+                    A positioned element is an element whose computed position value is  anything except static.
+                </p>
+                <br>
+                <h4><u>Fixed Positioning</u>: </h4>
+                <p class = "text-indent">
+                    A fixed positioned element is an element whose computed position value is relative to the initial containing block (the one made by the viewport. The body.). There are some exceptions. See the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/position" target="_blank" rel="noopener noreferrer">documentation. </a><strong>The element is removed from the normal document flow, and no space is created for the element in the page layout</strong>. If the element has margins, they are added to the offset. In printed documents, the element is placed in the same position on every page.
+                </p>
+                <br>
+                <h4><u>Sticky Positioning</u>: </h4>
+                <p class = "text-indent">
+                    This is rather confusing. It is positioned according to the normal flow of the document. That is, it will in the order with its sibling elements. However, it is positioned/offset relative to its nearest scrolling ancestor and containing block. It's treated as relatively positioned until its containing block crosses a specified threshold, at which point it is treated as "stuck" until meeting the opposite edge of its containing block. <em>Note that a sticky element can never get out of its container.</em>
+                </p>
+            </div>
+            <br>
+            <h4 style="text-align: center;">Playground</h4>
+            <div id = "container-2" style = "margin-top: 0;">
+                <div class="box">My position is relative</div>
+                <div class="box" id="box1">
+                    <p>
+                        My position is relative too.
+                    </p> 
+                </div>
+                <div class="box" id="box2">My position is absolute</div>
+                <div class="box" id="box3">I am just fixed... I'm stuck</div>
+                <div class="box" id="box4">My position is sticky</div>
+            </div>
+            <code class = "language-css">
+#box1 {
+    position: relative;
+    top: 30px;
+    left: 40px;
+}
+#box2 {
+    position: absolute;
+    top: 300px; 
+    left: 200px;
+}
+
+
+#box3 {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    height: 60px;
+}
+
+#box4 {
+    position: sticky;
+    top: 50px;
+}
+            </code>
+        </section>
+    </main>
+    <footer>
+        References:
+        <ol>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/display" target="_blank" rel="noopener noreferrer">Display - MDN Docs</a></li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/position" target="_blank" rel="noopener noreferrer">Position - MDN Docs</a></li>
+        </ol>
+        <p>Note: Unlike fixed, sticky position comes with no defaults. So we always need a top, left, bottom, right to make it work. Position sticky on its own does nothing.</p>
+    </footer>
+</body>
+
+</html>

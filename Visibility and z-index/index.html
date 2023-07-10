@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="../prism/prism-light.js"></script>
+    <title>Visibility and z-index</title>
+</head>
+<body>
+    <header>
+        <h1 class="top-heading">Visibility and Z-Index</h1>
+    </header>
+    <main>
+        <section>
+            <h2><strong><u>Visibility</u>:</strong></h2>
+            <p class="text-indent">
+                <em>
+                    Visibility without value is vanity, and for this world, ability without visibility is nothing, for this world is like a webpage.
+                </em>
+            </p>
+            <hr>
+            <br>
+        <p class = "text-indent">
+            There are two ways to hide an element. <span class="inline-code">display: none;</span> and <span class="inline-code">visibility: hidden;</span>. Changing the <strong>display</strong> property affects the way element is placed into the page and setting it to <strong>none</strong> causes it to not be placed nor alloted any space and the document is rendered as though the element did not exist. All descendant elements also have their display turned off. <em>Note that this isn't actually hiding but rather deleteing the element altogether.</em>
+        </p>
+        <p class = "text-indent">
+            To have an element take up the space that it would normally take, but without actually rendering anything, we use the <strong>visibility</strong> property instead. <span class="inline-code">visibility: hidden;</span> hides the element bu shows the empty space left behind.
+        </p>
+        <div class="box" id="box1"><h3>Box 1</h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </div>
+        <div class="box" id="box2"><h3>Box 2</h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+        <div class="box" id="box3"><h3>Box 3</h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+        <div class="box" id="box4"><h3>Box 4</h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </div>
+        <p class = "text-indent">
+            Here, Box 1 and Box 4 are visible. Box 2 is hidden, whereas Box 3 is set to <span class="inline-code">display: none;</span>.
+        </p>
+        <code class = "language-css">
+#box1 {
+    background-color: lightblue;
+    visibility: visible;
+}
+
+#box2 {
+    background-color: bisque;
+    visibility: hidden;
+}
+
+#box3 {
+    background-color: lightsalmon;
+    display: none;
+}
+
+#box4 {
+    background-color: darkseagreen;
+}
+        </code>
+    </section>
+    <section>
+        <h2><strong><u>Z-Index</u>:</strong></h2>
+        <p class="text-indent">
+            <em>
+                The world is like a webpage, and elements use z-index to overshadow others.
+            </em>
+        </p>
+        <hr>
+        <br>
+        <p class="text-indent">
+            Z-index only works with <a href="../Display and Position/HTML.html#positioned-element">positioned</a> elements. The element with higher z-index appears above the element with lower z-index.
+        </p>
+        <h4 style="text-align: center;">Playground</h4>
+        <div id="container-2" style="margin-top: 0;">
+            <div class="box" id="box-z-1">I am Box-1</div>
+            <div class="box" id="box-z-2">I am Box-2</div>
+            <div class="box" id="box-z-3">I am Box-3</div>
+            <div class="box" id="box-z-4">I am Box-4</div>
+            <div class="box" id="box-z-5">I am Box-5</div>
+        </div>
+        <code class="language-css">
+#box-z-1 {
+    position: absolute;
+    top: 41px;
+    left: 14%;
+
+    z-index: 1;
+}
+
+#box-z-2 {
+    position: absolute;
+    top: 333px;
+    left: 12%;
+    z-index: 2;
+}
+
+#box-z-3 {
+    position: absolute;
+    top: 132px;
+    left: 31%;
+    z-index: 3;
+}
+
+#box-z-4 {
+    position: absolute;
+    top: 262px;
+    left: 35%;
+    z-index: 4;
+}
+
+#box-z-5 {
+    position: absolute;
+    top: 223px;
+    left: 50%;
+    z-index: 5;
+}
+        </code>
+    </section>
+    </main>
+    <footer>
+        <p>
+            Refrences:
+            <ol>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/visibility" target="_blank" rel="noopener noreferrer">visibility - MDN docs</a></li>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/z-index" target="_blank" rel="noopener noreferrer">z-index - MDN docs</a></li>
+            </ol>
+        </p>
+    </footer>
+</body>
+</html>

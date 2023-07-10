@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="style.css">
+    <title>CSS selectors</title>
+</head>
+
+<body>
+    <h2>Selectors in CSS</h2>
+    <em>Selectors tell CSS which elements to apply the style too</em>
+    <hr><br>
+    There are four basic types of selectors in CSS:
+    <ol>
+        <li>Element or Type Selector</li>
+        <li>ID Selector</li>
+        <li>Class Selector</li>
+        <li>Grouping Selector</li>
+    </ol>
+    <strong><u>Examples of Element Selectors:</u></strong>
+    <div>
+        <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum dolores reprehenderit officia voluptatibus
+            nemo distinctio sint consectetur eos totam? Enim odit recusandae quae expedita error praesentium, doloremque
+            quam voluptatum, nesciunt, dicta laboriosam. Porro qui dignissimos expedita, accusamus assumenda dolorem ab
+            deleniti itaque ex, asperiores exercitationem ipsam reprehenderit libero perspiciatis. Saepe.
+        <p>
+            <em>All paragraphs are set to be justified using an element selector</em>
+        </p>
+        </p>
+
+        <div class="code">
+<span class="comment">/*Examples of element selectors*/</span>
+
+body {
+font-family: Georgia, 'Times New Roman', Times, serif;
+width: 90%;
+background-color: azure;
+}
+
+
+p {
+text-align: justify;
+}
+
+u {
+background-color: aqua;
+}
+        </div>
+    </div>
+    <div style="margin-top:20px;">
+        <strong><u>Example of ID selector: </u></strong>
+        <div id="idSelector">
+            Styles applied using CSS id selector.
+            <pre>
+                <div class="code">
+#idSelector {
+    border-radius: 20px;
+    margin:auto;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: blue;
+    width: 50%;
+}
+                </div>    
+            </pre>
+        </div>
+    </div>
+    <div style="margin-top:20px;">
+        <strong><u>Example of class selector: </u></strong>
+        <div style="margin-top: 20px;">
+            Styles applied using CSS class selector.
+            <nav class="menu">
+                <li class="menu-item">Element 1</li>
+                <li class="menu-item">Element 2</li>
+                <li class="menu-item">Element 3</li>
+                <li class="menu-item">Element 4</li>
+            </nav>
+            <pre>
+                <div class="code">
+.menu {
+    margin-top: 10px;
+    background-color: black;
+}
+.menu-item
+{
+    border-right: 1px solid gray;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: white;
+    text-align: center;
+    padding-right: 5px;
+    margin: 0px;
+    background-color: black;
+    marker: none;
+    display: inline;
+}
+.menu-item:hover 
+{
+    color: red;
+}
+                </div>    
+            </pre>
+        </div>
+    </div>
+    <div id = "GroupSelectors">
+        <u>Examples of grouping selectors (a.k.a. selector lists):</u>
+        <p>If need be, a rule can be applied to multiple elements, classes, ids or a combination of them. However, if any of the selectors makes the rule invalid, it will not be applied to any of the selectors. Use forgiving selectors to allow for invalid rules for some selectors.</p>
+        <div style="background-color: rgb(140, 157, 224); padding: 10px; border-radius: 10px;">
+            The heading and the text below have been styled using selector lists:
+            <h3>Heading 3</h3>
+            <span class="special">Normal Text</span>
+        <div class="code">
+<span class="comment">/*Unforgiving Group Selectors*/</span>
+#GroupSelectors h3, .special
+{
+    border-radius: 5px;
+    border: 2px solid red;
+    color: blue;
+}
+<span class="comment">/*Forgiving Group Selectors*/</span>
+:is(#GroupSelectors h3, .special) 
+{
+    border-radius: 5px;
+    border: 2px solid red;
+    color: blue;
+}
+        </div>
+        </div>
+
+    </div>
+    <footer>See: <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors" target="_blank"
+            rel="noopener noreferrer">Selectors</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors" target="_blank"
+            rel="noopener noreferrer">List of all Selectors</a></footer>
+
+</body>
+
+</html>

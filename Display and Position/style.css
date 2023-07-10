@@ -1,0 +1,89 @@
+@import url(../prism/prism-light.css);
+@import url(../Alignment/style.css);
+
+/* Display */
+.container {
+    background-color: bisque;
+    border: 2px solid rgb(138, 116, 88);
+    border-radius: 10px;
+    padding: 15px;
+    width: 85%;
+    margin: 32px auto;
+    overflow: hidden;
+}
+
+#test-1 {
+    margin:auto;
+}
+#test-2 {
+    margin:auto;
+    width: fit-content;
+    
+}
+
+#inline {
+    display: inline;
+    width: 20%;    /*❌ doesn't work*/
+    height: 250px; /*❌ doesn't work*/
+    margin: auto;  /*❌ doesn't work*/
+}
+#block {
+    display: block;
+    width: 20%;
+    height: 250px;
+    margin: auto;
+}
+#inline-block {
+    display: inline-block;
+    width: 20%;
+    height: 250px;
+    margin: auto; /*❌ doesn't work*/
+}
+
+
+/* Position */
+
+.box {
+    border: 2px solid rgb(119, 137, 0); 
+    width: 150px;
+    height: 150px;
+    margin: 2px;
+    background-color: rgba(255, 230, 0, 0.392);
+    border-radius: 20px;
+    padding: 10px;
+    display: inline-block;
+    text-align: center;
+}
+#box1 {
+    position: relative;
+    top: 30px;
+    left: 40px;
+}
+#box2 {
+    position: absolute;
+    top: 300px; 
+    left: 200px;
+}
+
+#box3 {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    height: 60px;
+}
+
+#box4 {
+    position: sticky;
+    top: 50px;
+}
+
+#container-2 {
+    position: relative;
+    border: 2px solid rgb(119, 137, 0); 
+    width: 100%;
+    height: 1000px;
+    margin: 2px;
+    background-color: rgb(173, 173, 173);
+    border-radius: 20px;
+    padding: 10px;
+}
