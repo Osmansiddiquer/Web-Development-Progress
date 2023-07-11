@@ -11,7 +11,8 @@ main {
     min-height: 100vh;
     position: relative;
     z-index: 1;
-    background-color: azure;
+    background-color: rgb(0, 0, 0);
+    color: white;
     padding: 10px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
@@ -26,17 +27,16 @@ header>.sub-line {
 }
 
 body {
-    color: rgb(227, 227, 227);
     width: auto;
     padding: 10px;
-    background: linear-gradient(0deg, rgb(45, 45, 45), rgb(122, 122, 122));
     margin: 0;
 
-    font-size: medium;
-    background-color: azure;
+    background: linear-gradient(0deg, rgb(0, 0, 0), rgb(122, 122, 122));
     color: rgb(56, 61, 87);
+
+    font-size: medium;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    padding: 10px;
+    
     padding-bottom: 50px;
     padding-left: 30px;
 }
@@ -89,7 +89,7 @@ footer {
     border-top: none;
     top: unset;
     width: auto;
-    background-color: rgb(122, 112, 255);
+    background-color: rgb(26, 24, 56);
 }
 
 ul,
@@ -112,7 +112,7 @@ header {
     margin-bottom: -10px;
     padding-bottom: 20px;
     width: auto;
-    background-color: rgb(122, 112, 255);
+    background-color: rgb(37, 33, 77);
 }
 
 .after-space {

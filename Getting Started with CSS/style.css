@@ -5,6 +5,7 @@
     border: 5px solid blueviolet;
     border-radius: 20px;
     background-color: rgb(53, 174, 170);
+    color: black;
 }
 
 .external_paragraph {
@@ -17,5 +18,5 @@
 body {
     font-family: Georgia, 'Times New Roman', Times, serif;
     width: 90%;
-    background-color: azure;
+    /* background-color: azure; */
 }

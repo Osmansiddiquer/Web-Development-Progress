@@ -12,6 +12,7 @@
     text-align: center;
     overflow-y: scroll;
     display: inline-block;
+    color: black;
 }
 body *::-webkit-scrollbar{
     display: none;

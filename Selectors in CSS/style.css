@@ -5,7 +5,7 @@ p {
 }
 
 u {
-    background-color: rgba(255,41,134,0.13);
+    background-color: rgb(202, 28, 255);
 }
 
 a {
@@ -42,6 +42,7 @@ The last value is the shadow color – in this case, #7fecad. */
     transition: 250ms;
     background-color: lightblue;
     width: 50%;
+    color: black;
 }
 /*Examples of class selectors*/
 .menu {

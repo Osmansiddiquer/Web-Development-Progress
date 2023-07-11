@@ -9,10 +9,11 @@
     justify-content: space-around;
     padding: 10px 5%;
     margin: 10px 5%;
-    background-color: #fff;
+    background-color: #282121;
     border: 2px solid brown;
     align-items: center;
     border-radius: 20px;
+    color: white;
 }
 
 h1 {
