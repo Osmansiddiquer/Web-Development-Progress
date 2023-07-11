@@ -1,15 +1,5 @@
 @import url(../Alignment/style.css);
 
-header>.top-heading{
-    font-size: 6vw;
-}
-
-@media (min-width: 1200px) {
-    header>.top-heading{
-        font-size: 60px;
-    }
-}
-
 div.container {
     margin: 10px 10%;
     row-gap: 10px;

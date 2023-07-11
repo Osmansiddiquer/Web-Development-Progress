@@ -1,5 +1,11 @@
+:root {
+    --background: rgb(1, 0, 32);
+    --foreground: rgb(208, 208, 208);
+}
+
+
 .Border {
-    border: 2px solid black;
+    border: 2px solid rgb(255, 255, 255);
     border-radius: 5px;
 }
 
@@ -21,7 +27,7 @@ details {
     top: 20px;
     font-family: Arial, Helvetica, sans-serif;
     border: 1px solid #aaa;
-    background-color: rgb(0, 0, 0);
+    background-color: var(--background);
     border-radius: 4px;
     padding: 0.5em 0.5em 0;
     margin-bottom: 5px;
@@ -96,12 +102,20 @@ a:visited {
 body {
     font-size: larger;
     width: 70%;
-    background-color: rgb(0, 0, 0);
-    color: rgb(255, 255, 255);
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: Arial, Helvetica, sans-serif;
     padding: 10px;
     padding-bottom: 50px;
     padding-left: 30px;
+}
+
+body header {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+body h1 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 @media (max-width: 800px) {
@@ -120,16 +134,16 @@ footer {
     width:98.735%;
     left: 0px;
     bottom: 0px;
-    border-top: 2px solid black;
+    border-top: 2px solid var(--foreground);
     display: block;
-    background-color: rgb(255, 255, 255);
+    background-color: black;
 }
 footer:hover {
     top:unset;
     bottom: 0px;
 }
 table,td,th {
-    background-color: rgb(207, 207, 207);
+    background-color: var(--foreground);
     vertical-align: center;
 }
 table {
@@ -166,7 +180,7 @@ pre.normal{
 
 section {
     padding-bottom: 10px;
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid var(--foreground);
     margin-top: 10px;
 }
 
@@ -188,5 +202,5 @@ body::before {
 }
 
 .container {
-    color: black;
+    color: var(--background);
 }

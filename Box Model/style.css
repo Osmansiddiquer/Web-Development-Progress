@@ -9,6 +9,9 @@ main {
     border-top-right-radius: 10px;
     padding-left: 20px;
 }
+.code, code {
+    box-shadow: 0 0 5px 5px rgb(0, 0, 0, 0.5);
+}
 body {
     width: auto;
     padding: 50px 100px 0px 5px; 

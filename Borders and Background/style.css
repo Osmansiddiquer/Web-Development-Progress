@@ -1,5 +1,6 @@
 body {
     background-image: linear-gradient(60deg, red, pink, rgb(255, 200, 240));
+    color: black;
 }
 
 #first-paragraph {
