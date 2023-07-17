@@ -17,7 +17,7 @@
 }
 
 main {
-    min-height: 100vh;
+    /* min-height: 100vh; */
     position: relative;
     z-index: 1;
     background-color: var(--background);
@@ -32,6 +32,7 @@ main {
 header>.sub-line {
     margin-top: 0.5em;
     text-align: center;
+    font-style: italic;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
@@ -39,7 +40,7 @@ body {
     width: auto;
     padding: 10px;
     margin: 0;
-
+    min-height: 100vh;
     background: linear-gradient(0deg, rgb(0, 0, 0), rgb(122, 122, 122));
     color: var(--background);
 

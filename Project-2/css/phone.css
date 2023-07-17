@@ -1,0 +1,24 @@
+.navbar>a.logo>span{
+    display: none;
+}
+
+
+@media (max-width: 570px) {
+    html {
+        font-size: 3vw;
+    }
+    #header-bg {
+        height: calc(var(--navbar-height)*1.5);
+    }
+    header {
+        height: calc(var(--navbar-height)*1.5);
+    }
+    .navbar {
+        height: calc(var(--navbar-height)*1.5);
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .service>div {
+        min-height: 40vw;
+    }
+}
