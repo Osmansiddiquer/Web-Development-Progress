@@ -4,7 +4,8 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
-    transition: 250ms;   
+    transition: 250ms;  
+    scroll-behavior: smooth; 
 }
 
 
@@ -356,3 +357,8 @@ footer {
     padding: 10px 0;
 }
 
+@media screen and (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+}
