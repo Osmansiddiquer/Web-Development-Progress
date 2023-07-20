@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../prism/prism-light.css">
+    <script src="../prism/prism-light.js"></script>
+    <title>CSS Grid</title>
+</head>
+
+<body>
+    <div class="section" id="section-1">
+        <h1 class="h-primary center">Introducing CSS Grids</h1>
+        <p style="font-size: 1.8rem" class="center">Unlock the power of layout with CSS Grid, where design meets
+            limitless possibilities!</p>
+        <p class="center">Made using <strong>background-attachment: fixed;</strong></p>
+    </div>
+    <div class="section" id="section-2">
+        <h1 class="h-secondary center">A grid example</h1>
+        <div class="container">
+            <div class="item center">This is item-1</div>
+            <div class="item center">This is item-2</div>
+            <div class="item center">This is item-3</div>
+            <div class="item center">This is item-4</div>
+            <div class="item center">This is item-5</div>
+            <div class="item center">This is item-6</div>
+            <div class="item center">This is item-7</div>
+            <div class="item center">This is item-8</div>
+            <div class="item center">This is item-9</div>
+        </div>
+    </div>
+    <div class="section" id="section-3">
+        <h1 class="h-secondary center">What is a Grid?</h1>
+        <p class="center">
+            CSS Grid is a powerful layout system in CSS that allows you to create complex two-dimensional grid layouts
+            with ease. It introduces a new way to design web pages by dividing them into rows and columns. With CSS
+            Grid, you can define a grid container and specify the size and alignment of its grid tracks. These tracks
+            can be filled with grid items, such as elements or content areas, which can be positioned and ordered within
+            the grid.
+        </p>
+        <p class="center">
+            By using CSS Grid, you can achieve sophisticated and responsive layouts that adapt to different screen sizes
+            and orientations without relying on complex CSS hacks or frameworks.
+        </p>
+    </div>
+    <div class="section" id="section-4">
+        <h1 class="h-secondary center">Grid Container - Using CSS Grid</h1>
+        <p class="center">
+            To start using CSS Grid, you need to define a grid container. This can be any element in your HTML markup,
+            such as a &ltdiv> or a &ltsection>. Apply the CSS property display: grid; to the container to activate grid
+            layout.
+        </p>
+        <code class="language-css">
+        .grid-container {
+            display: grid;
+        }
+        </code>
+    </div>
+    <div class="section" id="section-4">
+        <h2 class="h-secondary center">Continued</h2>
+        <p class="center">
+            You can specify the structure of your grid by setting the number and size of rows and columns. You can use
+            various units like pixels (px), percentages (%), or flexible units like fractions (fr) to define the
+            dimensions.
+        </p>
+        <code class = "language-css">
+    .grid-container {
+        display: grid; /*Setting it to Grid*/
+        /* Make three columns. First of 300px, second of 100px, and third of 100px; */
+        grid-template-columns: 300px 100px 100px;
+        /* auto to automatically fill the rest of the available space*/
+        grid-template-columns: 300px auto 100px;
+        /* Three columns with a ratio of 1.2:2:4 */
+        grid-template-columns: 1.2fr 2fr 4fr;
+        /* You can use the repeat function in CSS to make multiple columns */
+        grid-template-columns: repeat(3, auto); /* auto assigns equal width */
+        /* create gap between the grid cells */
+        grid-gap: 2rem;
+    }
+        </code>
+    </div>
+    <div class="section" id="section-6">
+        <h1 class="h-secondary center">Another Example</h1>
+        <div class="grid-container">
+            <div class="box">This is box-1</div>
+            <div class="box">This is box-2</div>
+            <div class="box">This is box-3</div>
+            <div class="box">This is box-4</div>
+            <div class="box">This is box-5</div>
+        </div>
+        <code class="language-css">
+            .grid-container {
+                display: grid;
+
+                /* Using grid-template-rows*/
+                grid-template-rows: 1fr 3fr 2fr; /* default is 1fr */
+                grid-auto-rows: 2fr; /* change the default to 3fr */
+                /* Using grid-template-columns */
+                grid-template-columns: 1fr 4fr;
+            
+                grid-gap: 0.5rem;
+            }
+        </code>
+    </div>
+
+    <div class="section" id="section-7">
+        <h1 class="h-secondary center">Another - Spanning across cells</h1>
+        <div class="grid-container">
+            <div class="box">item-1</div>
+            <div class="box">item-2</div>
+            <div class="box">item-3</div>
+            <div class="box">item-4</div>
+            <div class="box">item-5</div>
+            <div class="box">item-6</div>
+            <div class="box">item-7</div>
+            <div class="box">item-8</div>
+            <div class="box">item-9</div>
+            <div class="box">item-10</div>
+            <div class="box">item-11</div>
+            <div class="box">item-12</div>
+            <div class="box">item-13</div>
+        </div>
+        <p class = "center">Once you've defined the grid structure, you can position grid items within the grid. Grid items are the elements you want to place in the grid, such as &lt;div> or &lt;span> tags. Use the CSS property grid-row and grid-column to specify where the items should be placed.</p>
+    </div>
+    <div class="section" id="section-7">
+        <h1 class="h-secondary center">Under the hood
+        </h1>
+        <code class="language-css">
+    #section-7 .box:first-child {
+        /* Place the item in column 1 to 3 */
+            grid-column-start: 1;
+            grid-column-end: 3;
+        /* Place the item in row 1 to 5 */
+            grid-row-start: 1;
+            grid-row-end: 5;
+    }
+        </code>
+        <strong><u>You can also use the Shorthand version:</u></strong>
+        <code class="language-css">
+    /* allows overlapping */
+    #section-7 .box:nth-child(8){
+        /* start/end */
+        grid-column: 2 / span 3; 
+        /* same as 2 / 5 */
+
+        grid-row: 4 / 6;  
+    }
+        </code>
+    </div>
+    <div class="section" id="section-8">
+        <h1 class="h-secondary">
+            minmax and auto-fit
+        </h1>
+        <div class="grid-container">
+            <div class="box">Item-1</div>
+            <div class="box">Item-2</div>
+            <div class="box">Item-3</div>
+            <div class="box">Item-4</div>
+            <div class="box">Item-5</div>
+            <div class="box">Item-6</div>
+            <div class="box">Item-7</div>
+            <div class="box">Item-8</div>
+            <div class="box">Item-9</div>
+            <div class="box">Item-10</div>
+            <div class="box">Item-11</div>
+            <div class="box">Item-12</div>
+            <div class="box">Item-13</div>
+            <div class="box">Item-14</div>
+            <div class="box">Item-15</div>
+        </div>
+    </div>
+    <div class="section" id="section-8">
+        <h1 class="h-secondary">
+            The elegant approach
+        </h1>
+        <code class="language-css">
+    #section-8 .grid-container{
+        ...
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-gap: 1rem;
+        justify-content: center;
+
+        overflow-y: scroll;
+        ...
+    }
+
+    #section-8 .grid-container::-webkit-scrollbar{
+        display: none;
+    }
+
+    #section-8 .box {
+        ...
+        aspect-ratio: 3/4;
+        ...
+    }
+        </code>
+    </div>
+    <div class="section" id="section-9">
+        <h1 class="h-secondary center">Grid Tempelate Areas - Reinventing Layouts intuitively</h1>
+        <div class="container">
+            <div class="grid">
+                <!-- <div class="box">item-1</div>
+                <div class="box">item-2</div>
+                <div class="box">item-3</div>
+                <div class="box">item-4</div>
+                <div class="box">item-5</div>
+                <div class="box">item-6</div>
+                <div class="box">item-7</div>
+                <div class="box">item-8</div>
+                <div class="box">item-9</div>
+                <div class="box">item-10</div>
+                <div class="box">item-11</div>
+                <div class="box">item-12</div>
+                <div class="box">item-13</div>
+                <div class="box">item-14</div> -->
+                <div class="box navbar">
+                    <ul>
+                        <li>Home</li>
+                        <li>Services</li>
+                        <li>Contact Us</li>
+                        <li>About Us</li>
+                    </ul>
+                </div>
+                <div class="box main center">
+                    <h1 class="h-secondary">
+                        oiku klie poqe kied
+                    </h1>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum quibusdam nesciunt animi saepe alias harum reprehenderit accusamus voluptates voluptatum, neque maxime commodi consequatur mollitia nisi quod itaque. Doloribus, alias soluta explicabo fuga delectus consequatur error dolorum minima vitae modi odio ea fugit illo tempora perspiciatis unde quo libero odit. Ratione quis sapiente voluptate maiores animi dolorum praesentium, accusantium quam molestiae? Tenetur quisquam, laudantium praesentium omnis sed non. A, possimus quas. Repudiandae culpa soluta, sequi laboriosam quod quis vel, beatae fugit, placeat facilis et iste aut quisquam. Accusantium dolores ex ut quam quis corporis expedita est iste a aliquam architecto ipsum, quod possimus nesciunt consequuntur. Explicabo ipsa neque eius, ea odio expedita sequi, animi tenetur nam sapiente consequatur corporis error, quo minus id dolor ullam cum asperiores ex excepturi aliquam. Aliquam error inventore sint ipsum ad recusandae, non possimus? Voluptatibus praesentium eveniet iusto incidunt sunt vero sint ipsa dolorum nam dolor. Reprehenderit, ex libero aperiam ut dolores accusamus eaque qui quidem tempore id porro. Ipsum atque facere sequi debitis officia neque veniam iure pariatur aut repudiandae eveniet provident illo voluptatibus dolor libero in, vel cupiditate optio deleniti aliquid eaque? Voluptatum, atque. Hic accusantium nulla dolores enim laboriosam amet sunt, dolorem omnis.
+                </div>
+                <div class="footer box">
+                    <h1 class="h-secondary">
+                        Footer
+                    </h1>
+                </div>
+                <div class="box aside">
+                    <h1 class="h-secondary">
+                        Ad Side Banner
+                    </h1> 
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section" id="section-9">
+        <h1 class="h-secondary center">How it works</h1>
+        <p class = "center">
+            Grid areas allow you to name regions of the grid, making it easier to place items within specific areas. You can then assign different grid-areas to different elements. This means that the order of the elements in the html document doesn't matter as they will be placed in their assigned grid-areas.
+        </p>
+        <code class="language-css">
+    .grid {
+        display: grid;
+        grid-gap: 1rem;
+        
+        /* We can list what elements will fill what cells using grid-template-areas */
+        grid-template-areas:
+        /* Fill the first row completely with navbar.  */
+        'navbar navbar navbar navbar navbar'
+        /* Fill with main four-fifths of the way */
+        'main main main main aside'
+        'footer footer footer footer footer';
+
+        grid-template-rows: 1fr 9fr 1fr;
+    }
+    .navbar { grid-area: navbar; }
+    .main { grid-area: main; }
+    .aside { grid-area: aside; }
+    .footer { grid-area: footer; }
+        </code>
+    </div>
+</body>
+</html>

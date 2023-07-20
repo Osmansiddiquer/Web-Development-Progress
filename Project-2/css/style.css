@@ -202,7 +202,7 @@ header {
     text-align:center;
 }
 /* services */
-#services-area {
+#services {
     display: flex;
     flex-direction: column;
     padding: 20px 5%;
@@ -265,7 +265,7 @@ header {
 }
 
 @media (min-width: 1900px){
-    #services-area {
+    #services {
         flex-direction: row;
         padding: 20px 5%;
         align-items: center;
@@ -273,7 +273,7 @@ header {
         width: 100%;
     }
     .service {
-        margin-left: 10px;
+        margin-left: 3%;
     }
 }
 

@@ -1,0 +1,363 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital@0;1&family=Rubik:wght@500&display=swap');
+/* CSS Reset */
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box; 
+    scroll-behavior: smooth; 
+}
+
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: hsl(0, 0%, 95%);
+    background-color: hsl(249, 100%, 5%);  
+    scroll-snap-type: y mandatory;
+}
+
+body *::-webkit-scrollbar{
+    display: none;
+}
+
+
+@media (max-width: 533px) {
+    html{
+        font-size: 3vw;
+    }
+}
+
+html { /* body won't work ¯\_(ツ)_/¯ */
+    scroll-snap-type: y mandatory;
+  }
+/* Although I'm told that html doesn't work in Safari and body does, so maybe use both? */
+  
+
+p {
+    line-height: 1.5em;
+}
+
+/* utility */
+.h-primary {
+    font-family: 'Rubik', sans-serif;
+    font-size: 3.8rem;
+}
+.h-secondary {
+    font-size: 2rem;
+    font-family: 'Rubik', sans-serif;  
+}
+.center {
+    text-align: center;
+}
+
+/* section */
+.section::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    content: '';
+    z-index: -1;
+    opacity: 0.3;
+    background-attachment: fixed;
+    background-size: cover;
+}
+.section{
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 1% 5%;
+
+    scroll-snap-align: center;
+
+    overflow-y: scroll;
+}
+
+
+#section-1::before {
+    background-image: url(https://source.unsplash.com/featured/?violet,flower,center);
+}
+
+#section-2::before {
+    background-image: url(https://source.unsplash.com/featured/?violet,flower);
+}
+
+#section-3::before {
+    background-image: url(https://source.unsplash.com/featured/?violet,center);
+}
+
+#section-4::before {
+    background-image: url(https://source.unsplash.com/featured/?violet,flower);
+}
+
+
+#section-5::before {
+    background-image: url(https://source.unsplash.com/featured/?violet,center);
+}
+
+#section-6::before {
+    background-image: url(https://source.unsplash.com/featured/?center);
+}
+
+#section-7::before {
+    background-image: url(https://source.unsplash.com/featured/?grid,center);
+}
+
+#section-8::before {
+    background-image: url(https://source.unsplash.com/featured/?violet,flower,creative);
+}
+
+#section-9::before {
+    background-image: url(https://source.unsplash.com/featured/?city,flower,end);
+}
+
+code, .code {
+    white-space: pre-wrap !important;
+    font-family: 'Courier New', Courier, monospace;
+    display: block !important;
+    box-shadow: 0 0 5px 5px rgba(255, 255, 255, 0.3);
+    /* border: 5px solid blueviolet !important; */
+    /* border-radius: 20px !important; */
+    background-color: rgb(255, 255, 255) !important;
+    /* margin: auto !important; */
+    max-width: fit-content !important;
+    margin-top: 20px !important;
+    padding-right: 30% !important;
+    padding-left: 20px !important;
+    max-width: 80%;
+}
+
+/* The Grid */
+#section-2 .container {
+    border: 2px solid rgb(73, 81, 143);
+    width: 100%; 
+    border-radius: 5px;
+    padding: 3px;
+    display: grid; /*Setting it to Grid*/
+    /* Make three columns. First of 300px, second of 100px, and third of 100px; */
+    /* grid-template-columns: 300px 100px 100px;  */
+
+    /* grid-template-columns: 300px auto 100px; */
+
+    grid-template-columns: 1.2fr 2fr 4fr;
+
+    /* You can use the repeat function in CSS to make multiple columns */
+    /* grid-template-columns: repeat(3, auto); */
+
+    grid-gap: 2rem;
+
+    
+}
+
+.item {
+    height: 100px;
+    /* width: 100px; */
+    background-color: rgb(0, 66, 2);
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    border: solid 2px;
+}
+
+#section-6>.grid-container {
+    display: grid;
+    width: 100%;
+    height: 40vh;
+    max-width: 800px;
+
+    /* Using grid-template-rows*/
+    grid-template-rows: 1fr 3fr 2fr; /* default is 1fr */
+    grid-auto-rows: 2fr; /* change the default to 3fr */
+    /* Using grid-template-columns */
+    grid-template-columns: 1fr 4fr;
+    grid-gap: 0.5rem;
+
+}
+
+#section-6 .box {
+    background-color: rgb(0, 66, 2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+#section-7>.grid-container {
+    width: 100%;
+    max-width: 800px;
+    
+    display: grid;
+    grid-template-columns: 1fr 3fr 3fr;
+    grid-template-rows: repeat(4, 1fr);
+
+    column-gap: 2rem;
+    row-gap: 1rem;
+}
+
+#section-7 .box {
+    background-color: rgb(0, 66, 2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+
+    padding: 5px; 
+    border: 2px solid white;
+}
+
+#section-7 .box:first-child {
+/* Place the item in column 1 to 3 */
+    grid-column-start: 1;
+    grid-column-end: 3;
+/* Place the item in row 1 to 5 */
+    grid-row-start: 1;
+    grid-row-end: 5;
+}
+
+/* allows overlapping */
+#section-7 .box:nth-child(8){
+    /* start/end */
+    grid-column: 2 / span 3; /* same as 2 / 5 */
+    grid-row: 4 / 6;  
+}
+
+#section-8 .grid-container{
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 1rem;
+    justify-content: center;
+
+    height: 80vh;
+    overflow-y: scroll;
+}
+
+#section-8 .box {
+    background-color: rgb(0, 66, 2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+
+    aspect-ratio: 3/4;
+
+    padding: 5px; 
+    border: 2px solid white;
+}
+
+#section-9>.container{
+    width: 100%;
+    height: 80vh;
+    overflow-y: scroll;
+
+    border: 5px solid;
+    padding: 5px;
+}
+
+#section-9 .box {
+    background-image: linear-gradient(45deg, rgb(84, 0, 84), maroon);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+
+    border-radius: 10px;
+
+    padding: 10px 15px;
+}
+
+#section-9 .navbar{
+    grid-area: navbar;
+
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+
+    align-self: end;
+}
+#section-9 .navbar>ul{
+    list-style: none;
+
+    display: flex;
+    width: 80%;
+    max-width: 400px;
+    justify-content: space-around;
+    /* position: absolute;
+    right: 20px; */
+}
+
+#section-9 .aside{
+    grid-area: aside;
+    flex-direction: column;
+    justify-content: center;
+    display: none;
+}
+
+#section-9 .main{
+    grid-area: main;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+#section-9 .footer {
+    grid-area: footer;
+}
+
+#section-9 .grid {
+    width: 100%;
+    display: grid;
+    grid-gap: 1rem;
+    
+    /* We can list what elements will fill what cells using grid-template-areas */
+    grid-template-areas:
+    /* Fill the first row completely with navbar.  */
+    'navbar navbar navbar navbar navbar'
+    /* Fill with main four-fifths of the way */
+    'main main main main main'
+    'footer footer footer footer footer';
+
+    grid-template-rows: 1fr 9fr 1fr;
+}
+
+/* Media Queries */
+
+@media (min-width: 768px) {
+    #section-9 .grid {
+        grid-template-areas:
+        'navbar navbar navbar navbar navbar'
+        'main main main main main'
+        'aside aside aside aside aside'
+        'footer footer footer footer footer';
+    
+        grid-template-rows: 1fr 9fr 2fr 1fr;
+    }
+    #section-9 .aside {
+        display: flex;
+    }
+}
+
+@media (min-width: 1024px) {
+    #section-9 .grid {
+        grid-template-areas:
+        'navbar navbar navbar navbar navbar'
+        'main main main main aside'
+        'footer footer footer footer footer';
+    
+        grid-template-rows: 1fr 9fr 1fr;
+    }
+}
+
+@media (min-width: 1400px) {
+
+}

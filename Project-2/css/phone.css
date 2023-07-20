@@ -20,5 +20,6 @@
     }
     .service>div {
         min-height: 40vw;
+        order: 2;
     }
 }
