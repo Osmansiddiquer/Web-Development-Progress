@@ -2,5 +2,12 @@
 /test.css
 /test.js
 /tutorial 4.html
-/*.pdf
-/*.md
+**/*.pdf
+**/*.md
+**/yarn
+**/node_modules
+**/*.csr
+**/*.crt
+**/*.key
+/FreeCodeCamp
+**/.yarn/*

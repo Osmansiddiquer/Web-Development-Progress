@@ -1,0 +1,115 @@
+:root{
+    --brand-color: hsl(219, 80%, 40%);
+    --secondary-color: hsl(219, 60%, 40%);
+    --background-color: black;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    white-space: nowrap;
+}
+.top-strip{
+    height: 30px;
+    background-color: var(--secondary-color);
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+body{
+    /* display: grid;
+    grid-template-rows: 1fr 9fr 1fr; */
+    gap: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+header{
+    height: 70px;
+    padding: 20px;
+    width: 100%;
+
+    background-color: chocolate;
+}
+
+header>#navbar{
+    height: 100%;
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#navbar *{
+    list-style: none;
+}
+
+#navbar>ul{
+    order: 2;
+    flex: 1;
+    display: flex;
+    gap: 10px;
+    justify-content: stretch;
+    max-width: 800px;
+}
+#navbar>ul>li{
+    /* background-color: green; */
+}
+#navbar li{
+    flex-grow: 1;
+    text-align: center;
+    position: relative;
+    padding: 10px;
+}
+
+#navbar .drop-down-list{
+    position: absolute;
+    max-height: 0;
+    width: 100%;
+    min-width: fit-content;
+    white-space: nowrap;
+    left: 0;
+    top: 100%;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.8);
+    z-index: 1;
+    transition: max-height 500ms;
+}
+.drop-down-list li:hover{
+    background-color: white;
+    cursor: pointer;
+}
+
+#navbar li:hover .drop-down-list{
+    display: flex;
+    flex-flow: column nowrap;
+    max-height: 500px;
+}
+
+.drop-down-list li{
+
+}
+
+#logo{
+    order: 1;
+    display: flex;
+}
+
+#search-box{
+    order: 3;
+    align-self: stretch;
+    display: flex;
+    gap: 10px;
+}
+#search-box>*{
+    background-color: transparent;
+    border: none;
+}
+#search-box>.btn:hover{
+    cursor: pointer;
+}
+#search-input{
+    border-bottom: 2px solid gray;
+    transition: width 250ms;
+    outline: none;
+}

@@ -1,0 +1,54 @@
+<!-- Copied from NetNinja -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TypeScript Tutorial</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrapper">
+    <h1>Finance Logger</h1>
+
+    <!-- output list -->
+    <ul class="item-list">
+    </ul>
+  </div>
+
+  <footer>
+    <form class="new-item-form">
+      <div class="field">
+        <label>Type:</label>
+        <select id="type">
+          <option value="invoice">Invoice</option>
+          <option value="payment">Payment</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>To / From:</label>
+        <input type="text" id="tofrom" required>
+      </div>   
+      <div class="field">
+        <label>Details:</label>
+        <input type="text" id="details" required>
+      </div>
+      <div class="field">
+        <label>Amount (﷼):</label>
+        <input type="number" id="amount" required>
+      </div>
+      <button id = "add">Add</button>
+    </form>
+
+    <a id = "company-link" href="https://www.thenetninja.co.uk">The Net Ninja</a>
+</footer>
+
+<div id ='resources'>
+    <h3>Resources:</h3>
+    <ol>
+        <li><a href="https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html" target="_blank" rel="noopener noreferrer">Getting Started</a></li>
+    </ol>
+</div>
+  <script src='sandbox.js'></script>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,143 @@
+:root{
+    --navbar-height: 60px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body::before{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url(https://source.unsplash.com/random/1000x600/?scenery);
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    opacity: 0.3;
+    content: ' ';
+    z-index: -1;
+}
+body {
+    background-color: rgb(247, 230, 172);
+    min-height: 100vh;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+nav {
+    height: var(--navbar-height);
+    background-color: hsla(0, 34%, 52%, 0.581);
+    padding: 5px 10px;
+    position: relative;
+    font-size: 1.2rem;
+}
+
+nav>*{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    padding: 2px 5px;
+    
+    font-size: 1.3rem;
+    font-weight: bolder;
+}
+
+img.logo-img {
+    /* surround operators with whitespace */
+    height: calc(var(--navbar-height)*0.75);
+    margin-right: 10px;
+}
+
+nav>ul {
+    display: flex;
+    list-style: none;
+    column-gap: 5px;
+    position: absolute;
+    right: 10px;
+}
+nav li{
+    height: 100%;
+    padding: 5px 10px;
+}
+
+nav li:hover{
+    transition: 250ms;
+    color: brown
+}
+
+main{
+    padding: 10px;
+    margin: 5vh auto;
+    max-width: 600px;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 80vh;
+    min-height: 500px;
+    justify-content: space-around;
+
+    background-color: rgba(88, 88, 191, 0.737);
+    border-radius: 10px;
+    position: relative;
+}
+
+#radiogroup {
+    border: none;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    row-gap: 10px;
+}
+legend{
+    width: 100%;
+}
+form#contact-form{
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    align-items: center;
+    margin-bottom: 8vh;
+    width: 80%;
+}
+
+form#contact-form>*{
+    border-radius: 10px;
+    padding: 5px 8px;
+    width: 100%;
+    border: none;
+}
+
+#contact-form textarea{
+    font-family: Calibri;
+    font-size: 1.2rem;
+}
+
+#contact-form .btn{
+    width: unset;
+    border-radius: 0;
+    padding: 6px 15px;
+    font-weight: bolder;
+    background-color: transparent;
+    border: 2px solid black;
+    margin-top: 25px;
+}
+
+#contact-form .btn:hover{
+    transition: 500ms;
+    color: rgb(123, 89, 245);
+    background-color: black;
+}
+
+#form-status {
+    position: absolute;
+    bottom: 20px;
+    color: hsl(0, 100%, 75%);
+}

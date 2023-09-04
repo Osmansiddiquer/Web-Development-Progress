@@ -1,0 +1,83 @@
+//- emmet works here too!
+//- Although it isn't required, you can automatically convert it to html live using:
+//- pug -w ./views -o ./views/html -P
+//- -P makes it pretty
+
+mixin comment(data)
+  .comment 
+    .name= data.name
+    hr
+    p= data.content 
+    em= data.date
+
+
+doctype doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet", href="demo-style.css")
+    title Document
+    style. 
+      body {
+        background-color: blue;
+      }
+      .comment{
+        padding: 20px;
+        margin: 5px;
+        border-radius: 8px;
+        background-color: hsl(211.35deg 100% 37.52%);
+        box-shadow: 0 0 10px 6px #ff0046;
+      }
+      .comment>.name{
+        font-size: 1.3rem;
+        font-weight: bolder;
+      }
+  body 
+html(lang="en")
+  head
+    //- setting attributes
+    meta(charset="UTF-8")  
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Document
+  body
+    h1= message
+    //- setting text using string literal
+    h2= "Anda" 
+    - const myClasses = ["loe", "fjekr", "ori"]
+    div#divy.my-div(class=myClasses)= "Bankai"
+
+    //- javascript code is signified by a - at the beginning
+    - const myStyles = {"color": "red", "background-color" : "gray"}
+    div(style=myStyles)= "Zanka No Tachi!"
+
+    - const myAttributes = {"src": "myPhoto.png", "alt": "This is my photo"}
+    img&attributes(myAttributes)
+
+    h1(style="text-align: center") For/Each Loop 
+    - const arr = [1,2,5,6,8,7]
+    div.flex
+      each n in arr
+        p(style="text-align: center")= n
+      else 
+        p 
+          strong Array is empty
+    div.flex
+      each n, i in ["a", "b", "c", "d", "e"]
+        p(style="text-align: center")= i+": "
+            strong= n
+    //- inverted commas or not doesn't matter in object keys
+    - const obj = {85: "Web Dev", "ker": "poie"}
+    //- each and for are the same
+    div.flex
+      for n, i in obj
+        p(style="text-align: center")= i+": "
+            strong= n
+    //- place a '|' to ensure text is treateed as plain text
+    p 
+      | gogo gaga, 
+      strong= obj["85"]
+    
+
+    +comment({name: "Osman", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis sem lobortis, congue ligula eu, sodales quam. Maecenas consequat, metus eget tempus rutrum, ante ligula placerat sapien, ac sollicitudin tortor ante quis lacus.", date: "05:50 - 3rd August, 2010"})
+

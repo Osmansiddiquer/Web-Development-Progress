@@ -357,7 +357,3 @@ code, .code {
         grid-template-rows: 1fr 9fr 1fr;
     }
 }
-
-@media (min-width: 1400px) {
-
-}

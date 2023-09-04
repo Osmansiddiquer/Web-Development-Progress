@@ -1,0 +1,76 @@
+@import url(../Alignment/style.css);
+*{
+    box-sizing: border-box;
+}
+body {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+#content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#content div {
+    width: 50px;
+    padding: 10px;
+    text-align: center;
+    background-color: rgb(0, 7, 65);
+    margin: 2px;
+    border-radius: 10px;
+}
+
+.container {
+    width: 90%;
+    min-width: 300px;
+    margin: 20px auto;
+    max-width: 900px;
+    color: var(--foreground);
+    box-shadow: 0 0 5px 2px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: rgba(132, 154, 154, 0.281);
+}
+
+.console::before{
+    content: attr(data-before); /* value that that refers to CSS 'content' */
+    font-family: Helvetica, sans-serif;
+    font-size: 0.75em;
+    position: absolute;
+    top: -1.5em;
+    left: 0;
+    background-color: white;
+    color: black;
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+    padding: 0 5px;
+    box-sizing: border-box;
+}
+.console {
+    position: relative;
+    width: 90%;
+    min-width: 280px;
+    background-color: rgb(51, 51, 51);
+    color: rgb(217, 217, 217);
+    font-family: monospace;
+    padding: 10px;
+    margin: auto;
+    border-radius: 0 0 10px 10px;
+    line-height: 1.5em;
+    margin-top: 2em;
+    /* white-space: nowrap; */
+}
+
+.console li{
+    overflow-x: scroll;
+    margin: 0;
+    border-bottom: 1px solid rgb(0, 0, 0);
+}
+.console li::marker{
+    color: rgb(132, 132, 132);
+}
+
+h1 {
+    margin-top: 0px;
+}
+

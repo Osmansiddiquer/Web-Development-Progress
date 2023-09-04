@@ -1,0 +1,25 @@
+{
+    "settingsSync.ignoredSettings": [
+        "-omnisharp.path"
+    ],
+    "liveServer.settings.donotVerifyTags": true,
+    "tailwindCSS.emmetCompletions": true,
+    "tailwindCSS.experimental.classRegex": [],
+    "[python]": {
+        "editor.formatOnType": true
+    },
+    "jupyter.askForKernelRestart": false,
+    "makefile.makePath": "C:\\msys64\\mingw64\\bin\\mingw32-make.exe",
+    "git.openRepositoryInParentFolders": "never",
+    "C_Cpp.default.cppStandard": "gnu++20",
+    "verilog.linting.linter": "iverilog",
+    "files.associations": {
+        "*.v": "systemverilog"
+    },
+    "[systemverilog]": {
+        "editor.defaultFormatter": "IMCTradingBV.svlangserver"
+    },
+    "editor.mouseWheelZoom": true,
+    "html.format.contentUnformatted": "",
+    "workbench.colorTheme": "Visual Studio Dark"
+}

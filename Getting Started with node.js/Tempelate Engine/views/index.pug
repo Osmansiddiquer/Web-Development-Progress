@@ -1,0 +1,39 @@
+//- You can use plain html in pug
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="style-index.css")
+        title #{title}
+        //- or title= title
+    body
+        nav
+            .logo 
+                img.logo-img(src="img/logo.svg", alt="logo")
+                .logo-text= companyName
+            ul 
+                li Home
+                li Services 
+                li About Us 
+                li Contact Us
+        main 
+            h1(style= 'text-align: center') 
+                u= Top_Heading
+            //- Default method is GET for the forms which shows up in the URL
+            form(action="/", method= "POST",id='contact-form') 
+                input(type= "text", name= "name", id= "name", placeholder= "Enter your name")
+                input(type= "number", name= "age", id= "age", placeholder= "Enter your age")
+                div(role= "radiogroup", id= "radiogroup") 
+                    legend Select Your Gender:
+                    div 
+                        input(type="radio", name="gender", value= "male", checked)
+                        label(for="male") Male
+                    div 
+                        input(type="radio", name="gender", value= "female")
+                        label(for="female") Female
+                <textarea name= "more" rows =7 cols ="30" placeholder="Tell Us about Yourself"></textarea>
+                button(type="submit" class = "btn") Submit
+            p#form-status #{formStatus}  
+
+    
