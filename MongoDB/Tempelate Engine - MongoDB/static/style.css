@@ -1,0 +1,94 @@
+:root{
+    --navbar-height: 60px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body::before{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url(https://source.unsplash.com/random/1000x600/?scenery);
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    opacity: 0.3;
+    content: ' ';
+    z-index: -1;
+}
+body {
+    background-color: rgb(247, 230, 172);
+    min-height: 100vh;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+nav {
+    height: var(--navbar-height);
+    background-color: hsla(0, 34%, 52%, 0.581);
+    padding: 5px 10px;
+    position: relative;
+    font-size: 1.2rem;
+}
+
+nav>*{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    padding: 2px 5px;
+    
+    font-size: 1.3rem;
+    font-weight: bolder;
+}
+
+img.logo-img {
+    /* surround operators with whitespace */
+    height: calc(var(--navbar-height)*0.75);
+    margin-right: 10px;
+}
+
+nav>ul {
+    display: flex;
+    list-style: none;
+    column-gap: 5px;
+    position: absolute;
+    right: 10px;
+}
+nav li{
+    height: 100%;
+    padding: 5px 10px;
+    border-radius: 8px;
+    border: 2px solid brown;
+    color: brown;
+}
+
+nav a:visited{
+    color: unset;
+}
+
+nav a{
+    color: unset;
+}
+
+nav li:hover{
+    transition: 250ms;
+    color: white;
+    background-color: brown;
+}
+
+footer#footer {
+    position: absolute;
+    bottom: 0;
+    background-color: hsla(0, 34%, 52%, 0.581);
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+}

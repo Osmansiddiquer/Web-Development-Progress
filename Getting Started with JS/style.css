@@ -1,0 +1,172 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: helvetica, sans-serif;
+    background-color: hsl(231, 100%, 5%);
+    color: hsl(0, 0%, 95%);
+    padding: 10px 5px;
+}
+
+body *::-webkit-scrollbar{
+    display: none;
+}
+
+
+@media screen and (min-width: 500px) {
+    body{
+        padding: 10px 5%;
+    }
+}
+
+.container {
+    margin: auto;
+    width: fit-content;
+    background-color: hsl(231, 100%, 10%);
+    padding: 10px;
+    box-shadow: 0 0 5px 3px rgb(0, 132, 155);
+    border-radius: 5px;
+}
+
+#story-generator label {
+    font-weight: bold;
+}
+
+#story-generator div {
+    padding-bottom: 20px;
+}
+
+#story-generator input[type="text"] {
+    padding: 5px;
+    width: 150px;
+}
+
+#story-generator p {
+    background: hsl(43, 100%, 57%);
+    color: hsl(16, 68%, 22%);
+    padding: 15px;
+    visibility: hidden;
+    max-width: 800px;
+    width: 100%;
+    border-radius: 5px;
+}
+
+#story-generator button {
+    padding: 8px 10px;
+    transition: 250ms;
+}
+
+#story-generator button:hover {
+    background-color: hsl(43, 100%, 57%);
+    border: 2px solid white;
+    color: white;
+}
+
+h1, h2 {
+    margin-bottom: 10px;
+}
+
+#calculator {
+    
+    font-size: 1rem;
+
+    width: 320px;
+
+    display: grid;
+    
+    grid-template-rows: 1fr repeat(5, 60px);
+    
+    grid-template-areas: 
+    'screen screen screen screen'
+    'percentage C backspace divide'
+    'seven eight nine multiply'
+    'four five six subtract'
+    'one two three add'
+    'decimal zero equal equal';
+    
+    gap: 2px;
+    
+    padding: 3px;
+    padding-top: 20px;
+    border-radius: 5px;
+    border: 1px solid rgb(142, 159, 255);
+    background-color: hsl(240, 31%, 15%);
+    
+    margin: auto;
+}
+
+#calculator>*{
+    /* border: none; */
+    color: white;
+}
+
+#calculator #screen{
+    grid-area: screen;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    text-align: end;
+
+    overflow: hidden;
+}
+
+#calculator #history {
+    color: gray;
+    word-break: break-all;
+    max-height: 80px;
+    height: 20px;
+}
+
+
+#calculator #result {
+    font-size: 36px;
+    font-weight: bold;
+    word-break: break-all;
+    max-height: 158px;
+    min-height: 42px;
+    overflow-y: scroll;
+}
+
+#calculator button{
+    border-radius: 5px;
+    font-size: 1.3em;
+}
+
+#calculator .number-button{
+    background-color: hsla(0, 0%, 100%, 0.151);
+}
+
+#calculator button:not(.number-button){
+    background-color: hsla(0, 0%, 100%, 0.044);
+}
+
+.blocked{
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+#calculator #one{grid-area: one;}
+#calculator #two{grid-area: two;}
+#calculator #three{grid-area: three;}
+#calculator #four{grid-area: four;}
+#calculator #five{grid-area: five;}
+#calculator #six{grid-area: six;}
+#calculator #seven{grid-area: seven;}
+#calculator #eight{grid-area: eight;}
+#calculator #nine{grid-area: nine;}
+#calculator #zero{grid-area: zero;}
+#calculator #decimal {grid-area: decimal;}
+#calculator #divide{grid-area: divide;}
+#calculator #multiply{grid-area: multiply;}
+#calculator #subtract{grid-area: subtract;}
+#calculator #add{grid-area: add;}
+#calculator #equal{grid-area: equal; background-color: rgb(0, 174, 255);}
+#calculator #CE{grid-area: CE; font-size: 16px;}
+#calculator #backspace{grid-area: backspace;}
+#calculator #C{grid-area: C;}
+#calculator #percentage{grid-area: percentage;}

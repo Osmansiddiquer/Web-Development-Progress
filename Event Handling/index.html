@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Event Handling</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <script src="../prism/prism-light.js"></script>
+</head>
+
+<body>
+    <h1 style = "text-align: center;"><u>Event Handling</u></h1>
+    <h2>Lorem Ipsum</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur velit expedita suscipit tempore in aliquid error, doloribus fuga deserunt saepe! Enim facilis tempore accusantium, sit recusandae ex atque aperiam! Rerumnesciunt exercitationem molestiae voluptate magni soluta, odio optio impedit asperiores aperiam quia modi dolores laboriosam earum ducimus consequuntur suscipit itaque distinctio possimus iure ullam? Laboriosam cumque dolor qui reiciendis quasi soluta pariatur commodi ex!</p>
+    <!-- inline js -->
+    <button id = "btn" onclick="toggleHide('p')">Show/Hide</button> 
+    <ol class="console" id="console"></ol>
+    <script src="script.js"></script>
+    <p>
+        Look <a href="https://developer.mozilla.org/en-US/docs/Web/Events">here</a> for the list of events. There are three main ways of handling events in JavaScript:
+    </p>
+        <ol>
+            <li>
+                <h3>Using addEventListener():</h3>
+                <p>Objects that can fire events have an addEventListener() method, and this is the recommended mechanism for adding event handlers. You can assign different event handling functions for each event for different objects/elements in your document:</p>
+                <pre class="language-js"><code>btn.addEventListener("mouseenter", function handler()=>{
+    print("console", "Mouse entered the button.");
+})
+//btn won't refer to the element if btn is declared anywhere in the script
+</code></pre>
+                <p>By default, every element with an id, can be accessed by a variable with the same name as the id of that element, without using the getElementById() function. Although, it makes code difficult to understand without looking at the html file, and is therefore, <strong>not recommended</strong>. If you've added an event handler using addEventListener(), you can remove it again using the removeEventListener() method:</p>
+                <pre class="language-js"><code>btn.removeEventListener("click", handler);</code></pre>
+            </li>
+            <li>
+                <h3>Event Hander Properties:</h3>
+                <p>
+                    Objects (such as buttons) that can fire events also usually have properties whose name is on followed by the name of the event. For example, elements have a property onclick. This is called an event handler property. To listen for the event, you can assign the handler function to the property. For example, you set the mouseleave event handler as:
+                </p>
+                <pre class="language-js"><code>let button = document.getElementById("btn");
+button.onmouseleave = () => {
+    print("console", "Mouse left the button");
+};</code></pre>
+                <p>
+                    With event handler properties, you can't add more than one handler for a single event. For example, you can call addEventListener('click', handler) on an element multiple times, with different functions specified in the second argument. This is impossible with event handler properties because any subsequent attempts to set the property will overwrite earlier ones.
+                </p>
+            </li>
+            <li>
+                <h3>Using Inline JavaScript (Not Recommended):</h3>
+                <p>The earliest method of registering event handlers found on the Web involved event handler HTML attributes (or inline event handlers) like the one shown below — the attribute value is literally the JavaScript code you want to run when the event occurs. The above example invokes a function defined inside the script element on the same page, but you could also insert JavaScript directly inside the attribute.</p>
+                <pre class="language-html"><code>&lt;button id = "btn" onclick="toggleHide('p')">Show/Hide&lt;/button></code></pre>
+            </li>
+        </ol>
+    </body>
+</html>

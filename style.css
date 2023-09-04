@@ -3,6 +3,9 @@
     --foreground: rgb(208, 208, 208);
 }
 
+body *::-webkit-scrollbar{
+    display: none;
+}
 
 .Border {
     border: 2px solid rgb(255, 255, 255);
@@ -62,12 +65,14 @@ code, .code {
     /* border-radius: 20px !important; */
     background-color: azure !important;
     color: black;
-    margin: auto !important;
+    margin: 20px auto !important;
+    padding-right: 15px !important;
     max-width: fit-content !important;
-    margin-top: 20px !important;
-    padding-right: 30% !important;
-    padding-left: 20px !important;
-    max-width: 80%;
+    width: 80%;
+    min-width: 200px;
+    overflow-x: scroll;
+    white-space: pre !important;
+    /* word-break: break-all !important; */
 }
 
 .comment {

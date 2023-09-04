@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style-index.css">
+    <title></title>
+  </head>
+  <body>
+    <nav>
+      <div class="logo"> <img class="logo-img" src="img/logo.svg" alt="logo">
+        <div class="logo-text"></div>
+      </div>
+      <ul> 
+        <li>Home</li>
+        <li>Services </li>
+        <li>About Us </li>
+        <li>Contact Us</li>
+      </ul>
+    </nav>
+    <main> 
+      <h1 style="text-align: center"> 
+        <u></u>
+      </h1>
+      <form action="/" method="POST" id="contact-form"> 
+        <input type="text" name="name" id="name" placeholder="Enter your name">
+        <input type="number" name="age" id="age" placeholder="Enter your age">
+        <div role="radiogroup" id="radiogroup"> 
+          <legend>Select Your Gender:</legend>
+          <div> 
+            <input type="radio" name="gender" value="male" checked>
+            <label for="male">Male</label>
+          </div>
+          <div> 
+            <input type="radio" name="gender" value="female">
+            <label for="female">Female</label>
+          </div>
+        </div><textarea name= "more" rows =7 cols ="30" placeholder="Tell Us about Yourself"></textarea>
+        <button class="btn" type="submit">Submit</button>
+      </form>
+      <p id="form-status">  </p>
+    </main>
+  </body>
+</html>

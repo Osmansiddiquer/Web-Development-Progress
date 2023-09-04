@@ -1,0 +1,21 @@
+{
+  "name": "te-tutorial",
+  "version": "1.0.0",
+  "description": "Learning how to serve static files and use tempelate engines using express",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Osman",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "express-validator": "^7.0.1",
+    "firstline": "^2.0.2",
+    "mongoose": "^7.4.2",
+    "nodemon": "^3.0.1",
+    "pug": "^3.0.2"
+  }
+}

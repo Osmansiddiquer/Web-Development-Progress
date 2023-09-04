@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Getting Started with JS</title>
+</head>
+
+<body>
+    <h2>A Silly Story Generator from MDN:</h1>
+        <div id="story-generator" class="container">
+            <div>
+                <label for="customname">Enter custom name:</label>
+                <input id="customname" type="text" placeholder="" />
+            </div>
+            <div>
+                <label for="us">US</label><input id="us" type="radio" name="ukus" value="us" checked />
+                <label for="uk">UK</label><input id="uk" type="radio" name="ukus" value="uk" />
+            </div>
+            <div>
+                <button class="randomize">Generate random story</button>
+            </div>
+            <!-- Thanks a lot to Willy Aguirre for his help with the code for this assessment -->
+            <p class="story"></p>
+        </div>
+        <br>
+        <hr><br>
+        <h2>A Simple Buggy Calculator:</h2>
+        <div id="calculator">
+            <div id="screen">
+                <div id="history">
+                    
+                </div>
+                <div id="result"></div>
+            </div>
+
+            <button id="zero" class = "number-button">0</button>
+            <button id="one" class = "number-button">1</button>
+            <button id="two" class = "number-button">2</button>
+            <button id="three" class = "number-button">3</button>
+            <button id="four" class = "number-button">4</button>
+            <button id="five" class = "number-button">5</button>
+            <button id="six" class = "number-button">6</button>
+            <button id="seven" class = "number-button">7</button>
+            <button id="eight" class = "number-button">8</button>
+            <button id="nine" class = "number-button">9</button>
+            <button id="decimal" class = "number-button">.</button>
+
+            <button id="divide">&divide;</button>
+            <button id="multiply">&times;</button>
+            <button id="subtract">-</button>
+            <button id="add">+</button>
+            <button id="equal">=</button>
+
+            <button id = "backspace">⌫</button>
+            <button id = "C">C</button>
+            <button id="percentage">%</button>
+        </div>
+        <br><hr><br>
+        <h2>setTimeOut, setInterval:</h2>
+        <span id="time"></span>
+        <br><hr><br>
+        <h2>Date and Time:</h2>
+        <p>Try using Date.now(), and Date.parse() in the console. JS provides setter and getter functions for all the properties of the Date object. MDN has really good <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date">documentation</a> on it.</p>
+        <br>
+        <div class="container" id = "dt"></div>
+        <br><hr><br>
+        <h2>Math Object:</h2>
+        <p>The Math namespace object contains static properties and methods for mathematical constants and functions. Math works with the Number type. It doesn't work with BigInt.</p>
+        <br>
+        <p>Unlike most global objects, Math is not a constructor. You cannot use it with the new operator or invoke the Atomics object as a function. All properties and methods of Math are <strong>static</strong>.</p>
+        <br>
+        <p>
+            <em>Look at the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math">documentation</a> for the complete lists of properties(constants), and methods(functions) in the Math Object. It is important to realize that JavaScript does not have classes, and is instead a prototype-based OOPL.</em>
+        </p>
+        <br>
+        You can also type 'Math' in the console to get the list of members in the object.
+        <img src="Math.jpg" alt="">
+        <script src="script.js">
+        </script>
+</body>
+</html>

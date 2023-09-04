@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="../prism/prism-light.js"></script>
+    <title>JavaScript | Strings, Arrays and Objects</title>
+</head>
+
+<body>
+    <header>
+        <h1 class="top-heading">String and Objects</h1>
+        <p class="sub-line">String functions are really important since all HTML manipulation is done using strings.</p>
+    </header>
+    <main>
+        <section>
+            <p class="text-indent">I won't be recording the start of my JavaScript journey extensively like I did with CSS
+                because I am already familiar with initial concepts such as variables, conditionals, loops etc. that are
+                common to all languages (python, C++, JS, etc.).</p>
+            <div class="container">
+                <h2>Strings:</h2>
+                <p>Look at the dev console too.
+                    <strong>Here's a bit of DOM:</strong>
+                    <code class=language-js>
+                let i = 1;
+                setInterval(function(){
+            if(i<=30){
+                let div=document.createElement("div");
+                div.innerText=i++;
+                document.getElementById("content").appendChild(div);
+            } 
+                }, 50);
+                    </code>
+                    <div id="content"></div>
+                </p>
+            </div>
+            <div class="container">
+                <h2>String Functions:</h2>
+                <p class="text-indent">I really like what I did here. Basically, the print function prints, much like the
+                    console.log() function to this handy console.</p>
+                <code class="language-js">
+let Consoles = document.getElementsByClassName("console");
+Object.keys(Consoles).forEach((console)=>{
+    Consoles[console].setAttribute('data-before', Consoles[console].id);
+});
+function print(console_id, ...data) {
+    console = document.getElementById(console_id);
+let p = document.createElement("li");
+data.forEach(element => {
+    if(typeof(element) == "object")
+        element = JSON.stringify(element);
+    else
+        element = String(element);
+    if (element == " ")
+        p.innerHTML += "&nbsp;";
+    else
+        p.innerText = p.innerText + element + " ";
+});
+    console.appendChild(p);
+}
+                </code>
+                <ol id="console" class = "console">
+                </ol>
+            </div>
+        </section>
+        <section>
+        <h2>Arrays and Objects:</h2>
+        <em>(Important Topic)</em>
+        <p class="before-space text-indent">
+            Variables are basically containers that are used to store values. In javascript, a variable may store two
+            types of values: primitive and reference. Numbers, boolean values, and the null and undefined types are
+            <strong>primitive values</strong>. Objects, arrays, and functions are <strong>reference values</strong>. I
+            found this decent introduction to these concepts <a
+                href="https://idnan.medium.com/primitive-vs-reference-values-2582f96e09dc" target="_blank"
+                rel="noopener noreferrer">here</a>. Basically, the variables with primitive values store the values in
+            stack. These values are copied when assigning to another variable.
+        </p>
+        <h3>Primitive Values:</h3>
+        <div style="display: flex; justify-content: space-around;align-items: center;">
+            <ol>
+                <li>Number</li>
+                <li>String</li>
+                <li>Boolean</li>
+                <li>Null</li>
+                <li>Undefined</li>
+            </ol>
+            <code class="language-js" style="margin: 0 !important;">
+    let n = 4.5;
+    n = "aloeittg";
+    n = true;
+    n = null;
+    n = undefined;
+            </code>
+        </div>
+        <h3>Reference Values:</h3>
+        <p class="text-indent">
+            In javascript, there are three reference types objects, array. Array are also objects so technically two types.
+            The size of reference types is dynamic so javascript stores the reference values on the heap. When we create an
+            object and assign it some value. The value is not directly stored in the variable instead a reference to the
+            value is stored in that variable. Let's take an example:
+        </p>
+        <code class="language-js">
+    let student1 = {name: "john", age: 20};
+    let student2 = student1;
+    console.log(student1); // {name: "john", age: 20}
+    console.log(student2); // {name: "john", age: 20}
+    student2.name = "doe";
+    console.log(student1); // {name: "doe", age: 20}
+    console.log(student2); // {name: "doe", age: 20}
+        </code>
+        <p class="text-indent">Unlike in many other languages, Objects in JavaScript are key-value pairs (like python dictionaries). Arrays are special types of objects that only have values defined, and the keys/index are alloted from 0 onwards. (head-canon &mdash; needs confirmation):</p>
+        <code class="language-js">
+    let employee = {
+        name: "Lorem",
+        salary: 10349
+    }
+    print("console-2", employee, employee['name'], employee.salary);
+    
+    let array = new Array(4, 5, employee, "blah", 8);
+    let a = new Array(20); //creates Array of 20 empty elements.
+    print("console-2", array);
+    array = [4, 5, 8, "peoir"];
+    print("console-2", array);
+        </code>
+        <ol id="console-2" class = "console">
+        </ol>
+        <br>
+    <h4>Related Functions and Properties:</h4>
+        The <strong>length</strong> property generally tells us about the size of the value stored in the variable. The specific meaning varies for different values/datatypes. The property is defined only for strings, objects (through the static function: Object.keys()) and functions. For all others, it is <em>undefined</em>
+        <code class="language-js">
+    print("console-3", "Number of characters in the HTML file:",
+    document.getElementsByTagName("html")[0].innerHTML.length);
+    // For an object, it gives the number of key value pairs.
+    print("console-3", Object.keys(employee).length);
+    
+    array.push("New");
+    // For an array, it gives the number of elements
+    print("console-3", array.length);
+    // for functions length is the number of formal parameters the function expects.
+    print("console-3", function(a, b, c, d){}.length);  
+        </code>
+        <ol class="console" id="console-3">
+
+        </ol>
+        <br>
+        <h4>A more detailed example for function length:</h4>
+        <code class="language-js">
+    console.log((() => {}).length); // 0
+    console.log(((a) => {}).length); // 1
+    console.log(((a, b) => {}).length); // 2 etc.
+
+    console.log(((...args) => {}).length);
+    // 0, rest parameter is not counted
+
+    console.log(((a, b = 1, c) => {}).length);
+    // 1, only parameters before the first one with
+    // a default value are counted  
+        </code>
+        <h3>Array Functions:</h3>
+        <p class="text-indent">
+            Much like C++ STL structures, arrays in JavaScript have a lot of functions, most of which I already know. 
+        </p>
+        <code class="language-js">
+    let list = [5, 89, 2993, 89, 4, "Howdy neighbour!"];
+    print("console-4", list);
+    print("console-4", [...list].sort()); //modifies the actual array
+    print("console-4", list.length);
+    // for functions below, you can give a start, and an end index.
+    print("console-4", [...list].fill(321)); // modifies the array
+    print("console-4", list.includes(2993));
+    print("console-4", [...list].reverse()); //modifies the array
+
+    //calls the function on each element and creates and returns a new array from the returned values.
+    print("console-4", list.map((element) => { 
+    return element + element;
+    }))
+    let list2 = [...list]; //spread syntax to copy the array.
+
+    // modifies the array, returns the new length
+    print("console-4", list.push(54), list); 
+
+    // modifies the array, returns the popped(the formerly last) element.
+    print("console-4", list.pop(), list); 
+        </code>
+        <ol class="console" id="console-4"></ol>
+    </section>
+    <section>
+        <h2>Alert, Prompt, Confirm:</h2>
+        <em>Also see <a href="https://getbootstrap.com/docs/4.0/components/modal">bootstrap modal.</a></em>
+        <code class="language-js">
+    alert(JSON.stringify(employee)); 
+    //alerts do not return anything. Use prompts for taking input. Use this for letting people know something.
+    
+    let myVar = prompt("What is your name.", "Eggman");
+    // returns null if cancelled. IE requires there to be a default prompt text argument. Like this below:
+    // let myVar = prompt("What is your name.", "");
+    console.log(myVar);
+    
+    let choco = confirm("You are going to get a chocolate "+ String(myVar) + "!");
+    // returns a bool.
+    
+    if(choco)
+        console.log("...if you choose to get it.");
+    else
+        console.log("then don't take it!");
+        </code>
+    </section>
+    <section>
+        <h2>Working with JSON:</h2>
+        <p>
+            Basically, all you doing, is converting the object to a string that can be transported over a network or into a file, using the JSON.stringify() method. So you can, convert the settings file for vscode, that are stored in the JSON format 
+        </p>
+        <code class="language-js">
+// Working with JSON
+// using fetch to read from a file??
+
+fetch("test.json")
+.then(response => response.text()) // extact data as a text file.
+.then(data => {
+    print("console-5", "This is the settings file: ");
+    print("console-5", data);
+    data.replaceAll("\n", "");
+    let dataObject = JSON.parse(data);
+    print("console-5", "A Sample Setting Property: ", dataObject["settingsSync.ignoredSettings"]);
+    print("console-5", "This is the settings file parsed, and then restringified: ");
+    print("console-5", JSON.stringify(dataObject));
+});
+//some cryptic promise magic
+        </code>
+        <ol class="console" id="console-5"></ol>
+    </section>
+    </main>
+    <footer>
+
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>

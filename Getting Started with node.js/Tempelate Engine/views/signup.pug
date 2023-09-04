@@ -1,0 +1,31 @@
+extends base
+
+block style
+    link(rel="stylesheet", href="style-signup.css")
+
+block content 
+    main 
+            h1(style= 'text-align: center') 
+                u= Top_Heading
+            //- Default method is GET for the forms which shows up in the URL
+            form(action="/signup", method= "POST",id='contact-form') 
+                input(type= "text", maxlength= 50, required, name= "name", id= "name", placeholder= "Enter your name (only alphabets and spaces)", pattern= "[a-zA-Z][a-zA-Z ]+[a-zA-Z]")
+                input(type= "email", required, maxlength= 320, name= "email", id= "email", placeholder= "Enter your email")
+                #agegroup 
+                    label(for="age") Age: 
+                    input(type= "number", required, min = 13, max= 250, name= "age", id= "age", placeholder= "Age", style = "max-width: 80px")
+                div(role= "radiogroup", id= "radiogroup") 
+                    legend Select Your Gender:
+                    div 
+                        input(type="radio", name="gender", value= "male", checked)
+                        label(for="male") Male
+                    div 
+                        input(type="radio", name="gender", value= "female")
+                        label(for="female") Female
+                <textarea name= "more" maxlength = 3000 rows =7 cols ="30" placeholder="Tell Us about Yourself (max. 3000 characters)"></textarea>
+                
+                button(type="submit" class = "btn") Submit
+            p#form-status #{formStatus}  
+
+block script-end 
+    script(src="index.js") 
