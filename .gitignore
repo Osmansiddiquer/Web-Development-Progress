@@ -11,3 +11,6 @@
 **/*.key
 /FreeCodeCamp
 **/.yarn/*
+/Netflix Clone
+/React/2-text-utils
+/COVID Plotter
