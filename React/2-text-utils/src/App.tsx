@@ -1,31 +1,77 @@
+import { useState, ChangeEvent } from 'react';
 import './App.css'
+import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.js';
+import Navbar from './components/Navbar'
+import TextForm from './components/TextForm';
+import DismissingAlert from './components/DismissingAlert';
+// font-awesome
+import ReactDOM from 'react-dom'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fab } from '@fortawesome/free-brands-svg-icons'
+import { faItalic, faBold, faVolumeHigh, faClipboard } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-function App(){
-return (
-    <div className="App" data-bs-theme="dark">
-      <nav className="navbar navbar-expand-lg bg-body-tertiary">
-        <div className="container-fluid">
-          <a className="navbar-brand" href="/">TextUtils</a>
-          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="/">Home</a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="/">About</a>
-              </li>
-            </ul>
-            <form className="d-flex" role="search">
-              <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-              <button className="btn btn-outline-success" type="submit">Search</button>
-            </form>
-          </div>
-        </div>
-      </nav>
+import { AlertState, AlertType, ThemeColors } from './interfaces'
+
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Link,
+} from "react-router-dom";
+
+import Home from './views/Home';
+import About from './views/About'
+
+library.add(fab, faItalic, faBold, faVolumeHigh, faClipboard)
+
+
+let logo = '/logo.svg';
+let logoDark = '/logo-dark.svg';
+
+function App() {
+
+  // Boolean(someString) where someString isn't empty always returns true. See the line below on how to parse it
+  const [isDark, setIsDark] = useState(localStorage.getItem('dark-mode-enabled') === 'true');
+  // state must be set using the set* function provided.
+  const [color, setColor] = useState(((localStorage.getItem('color-theme') === null) ? 'blue' : localStorage.getItem('color-theme')) as ThemeColors);
+  const [alert, setAlert] = useState({ type: 'primary', msg: '' } as AlertState)
+
+  function toggleDark(e: ChangeEvent) {
+    setIsDark(s => !s); //note: this is asynchronous
+    localStorage.setItem('dark-mode-enabled', String(!isDark));
+    console.log(localStorage.getItem('dark-mode-enabled'));
+  }
+
+  function showAlert(msg: string, type: AlertType) {
+    setAlert({
+      type: type,
+      msg: msg,
+      active: true
+    });
+
+    setTimeout(() => {
+      setAlert({ type: type, msg: msg, active: false });
+    }, 1000)
+  }
+
+  function changeColor(color: ThemeColors) {
+    setColor(color)
+    localStorage.setItem('color-theme', color);
+  }
+
+  return (
+    <div className={["App", isDark && 'dark', 'pb-3'].join(' ')} data-bs-theme={isDark && "dark"} data-color-theme={color}>
+      {/* Routing: */}
+      <BrowserRouter>
+        <Navbar logo={isDark ? logoDark : logo} title='Text-Utility' toggleMode={toggleDark} toggleState={isDark} changeColor={changeColor} currentColor={color} />
+        <DismissingAlert type={alert.type} msg={alert.msg} active={alert.active} />
+        <Routes>
+          <Route path="/" element={<Home showAlert={showAlert} />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

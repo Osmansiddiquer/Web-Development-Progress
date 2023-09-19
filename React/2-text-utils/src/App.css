@@ -1,3 +1,98 @@
-.App{
-    background-color: hsl(240, 60%, 27%)
+:root{
+    --navbar-color: lightblue;
+    --bg-color-dark: hsl(204, 60%, 10%);
+    --fg-color-dark: hsl(204, 10%, 90%);
+
+    --bg-color: hsl(0, 0%, 100%);
+    --fg-color: hsl(0, 0%, 0%);
+
+    --primary-color: hsl(216, 98%, 52%);
+    --primary-color-darkened: hsl(216, 98%, 32%);
 }
+
+.navbar {
+    background-color: var(--navbar-color);
+    border-bottom: 2px solid hsl(180, 20%, 30%);
+}
+
+.dark .navbar{
+    background-color: transparent !important;
+}
+
+.App[data-color-theme="blue"] {
+    --navbar-color: lightblue;
+
+    --bg-color-dark: hsl(204, 60%, 10%);
+    --fg-color-dark: hsl(204, 10%, 90%);
+
+    --primary-color: hsl(216, 98%, 52%);
+    --primary-color-darkened: hsl(216, 98%, 32%);
+}  
+
+.App[data-color-theme="red"] {
+    --navbar-color:pink;
+
+    --bg-color-dark: hsl(0, 60%, 10%);
+    --fg-color-dark: hsl(0, 10%, 90%);
+
+    --primary-color: hsl(0, 75%, 52%);
+    --primary-color-darkened: hsl(0, 75%, 40%);
+
+} 
+.btn-primary{
+    --bs-btn-color: var(--fg-color-dark);
+    --bs-btn-bg: var(--primary-color);
+    --bs-btn-border-color: var(--primary-color);
+    --bs-btn-hover-color: white;
+    --bs-btn-hover-bg: var(--primary-color);
+    --bs-btn-hover-border-color: transparent;
+    --bs-btn-focus-shadow-rgb: 100, 100, 100;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: var(--primary-color-darkened);
+    --bs-btn-active-border-color: var(--primary-color-darkened);
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: darkgray;
+    --bs-btn-disabled-border-color: darkgray;
+}
+
+.App[data-color-theme="green"] {
+    --navbar-color: lightgreen;
+
+    --bg-color-dark: hsl(141, 61%, 10%);
+    --fg-color-dark: hsl(141, 10%, 90%);
+
+    --primary-color: hsl(141, 60%, 52%);
+    --primary-color-darkened: hsl(141, 60%, 32%);
+} 
+
+.App {
+    background-color: var(--bg-color);
+    color: var(--fg-color);
+    min-height: 100vh;
+}
+.App.dark{
+    background-color: var(--bg-color-dark);
+    color: var(--fg-color-dark);
+}
+
+.container{
+    /* box-shadow: 0 0 5px 2px gray; */
+    border: 2px solid hsl(215, 15%, 30%);
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+.alert{
+    opacity: 1;
+}
+
+.btn.active{
+    border: 3px solid --bs-btn-bg;
+}
+
+.inactive{
+    transition: 2s;
+    opacity: 0;
+}
+
