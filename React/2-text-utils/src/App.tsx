@@ -3,32 +3,28 @@ import './App.css'
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.js';
 import Navbar from './components/Navbar'
-import TextForm from './components/TextForm';
 import DismissingAlert from './components/DismissingAlert';
 // font-awesome
-import ReactDOM from 'react-dom'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 import { faItalic, faBold, faVolumeHigh, faClipboard } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import { AlertState, AlertType, ThemeColors } from './interfaces'
 
+import logo from './logo.svg'
+import logoDark from './logo-dark.svg'
+
 import {
-  BrowserRouter,
   Routes,
   Route,
-  Link,
 } from "react-router-dom";
 
 import Home from './views/Home';
 import About from './views/About'
+import Error from './views/Error'
 
 library.add(fab, faItalic, faBold, faVolumeHigh, faClipboard)
 
-
-let logo = '/logo.svg';
-let logoDark = '/logo-dark.svg';
 
 function App() {
 
@@ -63,15 +59,14 @@ function App() {
 
   return (
     <div className={["App", isDark && 'dark', 'pb-3'].join(' ')} data-bs-theme={isDark && "dark"} data-color-theme={color}>
-      {/* Routing: */}
-      <BrowserRouter>
-        <Navbar logo={isDark ? logoDark : logo} title='Text-Utility' toggleMode={toggleDark} toggleState={isDark} changeColor={changeColor} currentColor={color} />
-        <DismissingAlert type={alert.type} msg={alert.msg} active={alert.active} />
-        <Routes>
-          <Route path="/" element={<Home showAlert={showAlert} />} />
-          <Route path="/about" element={<About />} />
-        </Routes>
-      </BrowserRouter>
+      <Navbar logo={isDark ? logoDark : logo} title='Text-Utility' toggleMode={toggleDark} toggleState={isDark} changeColor={changeColor} currentColor={color} />
+      <DismissingAlert type={alert.type} msg={alert.msg} active={alert.active} />
+      <Routes>
+        <Route path="/" element={<Home showAlert={showAlert} />} />
+        <Route path="/about" element={<About />} />
+        {/* Show for all URLS */}
+        <Route path="/*" element={<Error />} />
+      </Routes>
     </div>
   );
 }
