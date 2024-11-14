@@ -78,40 +78,40 @@ p {
 
 
 #section-1::before {
-    background-image: url(https://source.unsplash.com/featured/?violet,flower,center);
+    background-image: url(https://images.pexels.com/photos/19358148/pexels-photo-19358148/free-photo-of-river-and-forest-on-hill-behind.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
 }
 
 #section-2::before {
-    background-image: url(https://source.unsplash.com/featured/?violet,flower);
+    background-image: url(https://images.pexels.com/photos/24827280/pexels-photo-24827280/free-photo-of-cape-reinga-lighthouse-on-sea-coast-in-new-zealand.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load);
 }
 
 #section-3::before {
-    background-image: url(https://source.unsplash.com/featured/?violet,center);
+    background-image: url(https://images.pexels.com/photos/13198310/pexels-photo-13198310.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load);
 }
 
 #section-4::before {
-    background-image: url(https://source.unsplash.com/featured/?violet,flower);
+    background-image: url(https://images.pexels.com/photos/28701196/pexels-photo-28701196/free-photo-of-dramatic-peaks-of-the-dolomites-in-daylight.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load);
 }
 
 
 #section-5::before {
-    background-image: url(https://source.unsplash.com/featured/?violet,center);
+    background-image: url(https://images.pexels.com/photos/13198310/pexels-photo-13198310.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load);
 }
 
 #section-6::before {
-    background-image: url(https://source.unsplash.com/featured/?center);
+    background-image: url(https://images.pexels.com/photos/24827280/pexels-photo-24827280/free-photo-of-cape-reinga-lighthouse-on-sea-coast-in-new-zealand.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load);
 }
 
 #section-7::before {
-    background-image: url(https://source.unsplash.com/featured/?grid,center);
+    background-image: url(https://images.pexels.com/photos/28701196/pexels-photo-28701196/free-photo-of-dramatic-peaks-of-the-dolomites-in-daylight.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load);
 }
 
 #section-8::before {
-    background-image: url(https://source.unsplash.com/featured/?violet,flower,creative);
+    background-image: url(https://images.pexels.com/photos/1671325/pexels-photo-1671325.jpeg?auto=compress&cs=tinysrgb&w=600);
 }
 
 #section-9::before {
-    background-image: url(https://source.unsplash.com/featured/?city,flower,end);
+    background-image: url(https://images.pexels.com/photos/19358148/pexels-photo-19358148/free-photo-of-river-and-forest-on-hill-behind.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
 }
 
 code, .code {
