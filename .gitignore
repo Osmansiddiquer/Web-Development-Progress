@@ -10,4 +10,7 @@
 **/*.crt
 **/*.key
 /FreeCodeCamp
+/Netflix Clone
+/React/2-text-utils
+/COVID Plotter
 **/.yarn/*

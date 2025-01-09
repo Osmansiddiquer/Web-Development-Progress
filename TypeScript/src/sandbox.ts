@@ -11,7 +11,7 @@ inputs.forEach(element => {
     console.log(element);
 })
 
-// Compile sutomatically using tsc -w --pretty "file name"
+// Compile automatically using tsc -w --pretty "file name"
 
 
 interface Person {
@@ -19,7 +19,7 @@ interface Person {
     DOB: Date
 }
 
-class UserAccount {
+class UserAccount{
     user: Person;
     accountNo: Number;
 
