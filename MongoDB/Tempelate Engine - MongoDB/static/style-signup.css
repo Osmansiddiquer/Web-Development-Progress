@@ -10,7 +10,7 @@ main{
     min-height: 500px;
     justify-content: space-around;
 
-    background-color: rgba(88, 88, 191, 0.737);
+    background-color: rgb(200, 200, 200);
     border-radius: 10px;
     position: relative;
 }

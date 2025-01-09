@@ -1,0 +1,108 @@
+# Ignore node_modules folder (Node.js dependencies)
+node_modules/
+
+# Ignore build directories
+build/
+dist/
+out/
+coverage/
+
+# Ignore logs and temporary files
+*.log
+*.tmp
+
+# Ignore version control system directories
+.git/
+.hg/
+.svn/
+CVS/
+
+# Ignore specific config and lock files
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+*.lock
+
+# Ignore specific IDE/project files
+*.iml
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.csproj
+*.pyc
+.DS_Store
+
+# Ignore Docker related files
+.dockerignore
+Dockerfile
+
+# Ignore CI/CD configuration files
+.gitlab-ci.yml
+.circleci/
+.github/
+bitbucket-pipelines.yml
+azure-pipelines.yml
+
+# Ignore system files
+Thumbs.db
+desktop.ini
+
+# Ignore compiled and minified files
+*.min.js
+*.min.css
+*.map
+
+# Ignore static assets
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.svg
+*.webp
+*.ico
+*.mp4
+*.mp3
+*.wav
+*.ogg
+*.ttf
+*.woff
+*.woff2
+
+# Ignore documentation and markdown files
+*.md
+*.markdown
+*.rst
+
+# Ignore test files and test data
+*.test.js
+*.spec.js
+*.test.jsx
+*.spec.jsx
+*.test.ts
+*.spec.ts
+*.test.tsx
+*.spec.tsx
+test/
+tests/
+__tests__/
+__mocks__/
+
+# Ignore configuration files for bundlers and linters
+*.json
+*.xml
+*.yaml
+*.yml
+*.conf
+*.ini
+*.env
+*.eslint*
+*.babelrc
+*.prettierrc
+*.stylelintrc
+*.tsconfig
+*.webpack*
+*.gruntfile.js
+*.gulpfile.js
